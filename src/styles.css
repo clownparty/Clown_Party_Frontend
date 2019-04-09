@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-    --Primary: #FFB375;
-    --Primary-Light: #FFCDA4;
-    --Primary-Dark: #FFA458;
+    --Primary: #FFB375;         /*content background*/
+    --Primary-Light: #FFCDA4;   /*sidebar background*/
+    --Primary-Dark: #FFA458;    /*header/footer backgrounds*/
 
     --Secondary: #FFD175;
     --Secondary-Light: #FFE1A4;
@@ -28,12 +28,43 @@ nav, footer {
     padding: 10px;
 }
 
+nav a{
+    color: var(--Secondary-Light);
+}
+
+nav a:hover {
+    color: var(--Secondary);
+}
+
 .row {
     margin: 0px;
+}
+
+.buffer {
+    background-color: var(--Primary-Light);
 }
 
 .sidebar {
     background-color: var(--Primary-Light);
     padding: 10px;
     padding-left: 20px;
+}
+
+.sidebar a, .sidebar p{
+    color: var(--Tertiary-Dark);
+}
+
+.sidebar a:hover {
+    color: var(--Tertiary);
+}
+
+.header-image {
+    background-image: url('../assets/pokemon.jpg');
+    height: 200px;
+    background-clip: content-box;
+    margin-bottom: 5px;
+}
+
+.content-window {
+    padding: 10px;
 }
