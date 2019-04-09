@@ -3,13 +3,37 @@
     --Primary: #FFB375;
     --Primary-Light: #FFCDA4;
     --Primary-Dark: #FFA458;
+
     --Secondary: #FFD175;
     --Secondary-Light: #FFE1A4;
     --Secondary-Dark: #FFC758;
+
     --Tertiary: #FF7575;
     --Tertiary-Light: #FFA4A4;
     --Tertiary-Dark: #FF5858;
+
     --Accent: #4DA7A7;
     --Accent-Light: #41BEBE;
     --Accent-Dark: #669E9E;
+}
+
+body {
+    background-color: var(--Primary);
+}
+
+nav, footer {
+    background-color: var(--Primary-Dark);
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.row {
+    margin: 0px;
+}
+
+.sidebar {
+    background-color: var(--Primary-Light);
+    padding: 10px;
+    padding-left: 20px;
 }
