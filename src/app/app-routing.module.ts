@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'pokemon', component: PokemonListComponent },
-  { path: 'trainers/<id>', component: UserprofileComponent },
+  { path: 'trainers/id', component: UserprofileComponent },
   { path: 'trainers/me', component: UserprofileComponent },
   { path: 'team/new', component: CreateTeamComponent },
   { path: 'team', component: ViewTeamComponent },
