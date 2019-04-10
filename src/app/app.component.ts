@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {UserService} from './services/user.service';
+import {User} from './models/user.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Red badge project';
+  userListSubs: Subscription;
+  userList: User[];
+
+  constructor(private userApi: UserService) { }
+
+  ngOnInit() {
+    this.userListSubs = this.userApi
+    .getUser()
+    .subscribe(res => {
+      this.userList = res;
+    });
+  }
+
+  ngOnDestroy() {
+    this.userListSubs.unsubscribe();
+  }
 }

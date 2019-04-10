@@ -1,0 +1,22 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+// import { User } from '../models/user.model';
+
+const ApiUrl = "http://localhost:5000"
+
+@Injectable()      //{ providedIn: 'root' }
+export class UserService {
+
+  constructor(private http: HttpClient) { }
+
+  private static _handleError(err: HttpErrorResponse | any ) {
+    return Observable.throw(err.message || 'Error: Unable to complete request');
+  }
+
+  getUser(): Observable<any>  {
+    return this.http.get(`${ApiUrl}/trainers`)
+  }
+
+}
+
