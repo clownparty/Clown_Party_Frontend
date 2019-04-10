@@ -1,3 +1,28 @@
-<p>
-  register works!
-</p>
+<div id="register" class="animate form">
+  <form  action="mysuperscript.php" autocomplete="on"> 
+    <h1> Sign up </h1> 
+    <p class=""> 
+      <label for="usernamesignup" class="uname" data-icon="u">Username</label>
+      <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="username" />
+    </p>
+    <p> 
+      <label for="emailsignup" class="youmail" data-icon="e" > Email</label>
+      <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="email"/> 
+    </p>
+    <p> 
+      <label for="passwordsignup" class="youpasswd" data-icon="p">Password </label>
+      <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
+    </p>
+    <p> 
+      <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Confirm Password</label>
+      <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
+    </p>
+    <p class="buttons"> 
+      <input type="submit" value="Sign up"/> 
+    </p>
+    <p class="change_link">  
+      Already a member ?
+      <a routerLink="/login" class="to_register"> Click to Login </a>
+    </p>
+  </form>
+</div>
