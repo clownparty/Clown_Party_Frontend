@@ -5,20 +5,20 @@
   <!-- Searchbar -->
 
   <!-- If logged in -->
-  <a routerLink="/trainers/me"> Profile </a>
-  <a routerLink="/logout"> Logout </a>
+  <a routerLink="/trainers/me" class="navlink"> Profile </a>
+  <a routerLink="/logout" class="navlink"> Logout </a>
 
   <!-- If not logged in -->
-  <a routerLink="/login">Login </a>
-  <a routerLink="/register">Register </a>
+  <a routerLink="/login" class="navlink">Login </a>
+  <a routerLink="/register" class="navlink">Register </a>
 </nav>
 
 <div class="row">
   <div class="col-2 buffer"></div>  
-  <div class="col-7 content-window">
+  <div class="col-8 content-window">
     <router-outlet></router-outlet>
   </div>
-  <div class="col-3 sidebar">
+  <div class="col-2 sidebar">
     <p><a routerLink="/pokemon">Pok&eacute;dex</a></p>
     <p><a routerLink="/trainers/id">Trainers</a></p>
     <p><a routerLink="/team/new">Create Team</a></p>
