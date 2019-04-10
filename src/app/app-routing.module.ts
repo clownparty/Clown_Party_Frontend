@@ -10,6 +10,7 @@ import { UserprofileComponent } from './components/userprofile/userprofile.compo
 import { CreateTeamComponent } from './components/create-team/create-team.component';
 import { ViewTeamComponent } from './components/view-team/view-team.component';
 import { ViewAllUsersComponent } from './components/view-all-users/view-all-users.component';
+import { ViewAllTeamsComponent } from './components/view-all-teams/view-all-teams.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -20,8 +21,9 @@ const routes: Routes = [
   { path: 'trainers', component: ViewAllUsersComponent },
   { path: 'trainers/id', component: UserprofileComponent },
   { path: 'trainers/me', component: UserprofileComponent },
+  { path: 'team/all', component: ViewTeamComponent },
   { path: 'team/new', component: CreateTeamComponent },
-  { path: 'team', component: ViewTeamComponent },
+  { path: 'team', component: ViewAllTeamsComponent },
 ];
 
 @NgModule({
