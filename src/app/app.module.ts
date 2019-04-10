@@ -31,7 +31,8 @@ import { ViewAllUsersComponent } from './components/view-all-users/view-all-user
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

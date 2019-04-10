@@ -20,9 +20,7 @@ export class AppComponent {
     .getUser()
     .subscribe(res => {
       this.userList = res;
-    },
-    console.error
-    );
+    });
   }
 
   ngOnDestroy() {
