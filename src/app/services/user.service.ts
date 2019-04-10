@@ -18,5 +18,9 @@ export class UserService {
     return this.http.get(`${ApiUrl}/trainers`)
   }
 
+  testRequest(data:any): Observable<any> {
+    return this.http.post(`${ApiUrl}/test`, data)
+  }
+
 }
 

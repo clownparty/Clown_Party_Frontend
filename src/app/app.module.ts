@@ -13,7 +13,8 @@ import { UserprofileComponent } from './components/userprofile/userprofile.compo
 import { CreateTeamComponent } from './components/create-team/create-team.component';
 import { ViewTeamComponent } from './components/view-team/view-team.component';
 import { UserService } from './services/user.service';
-import { ViewAllUsersComponent } from './components/view-all-users/view-all-users.component'
+import { ViewAllUsersComponent } from './components/view-all-users/view-all-users.component';
+import { ViewAllTeamsComponent } from './components/view-all-teams/view-all-teams.component'
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ViewAllUsersComponent } from './components/view-all-users/view-all-user
     UserprofileComponent,
     CreateTeamComponent,
     ViewTeamComponent,
-    ViewAllUsersComponent
+    ViewAllUsersComponent,
+    ViewAllTeamsComponent
   ],
   imports: [
     BrowserModule,
