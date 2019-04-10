@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,8 @@ import { PokemonListComponent } from './components/pokemon-list/pokemon-list.com
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
 import { CreateTeamComponent } from './components/create-team/create-team.component';
 import { ViewTeamComponent } from './components/view-team/view-team.component';
+import { UserService } from './services/user.service';
+import { ViewAllUsersComponent } from './components/view-all-users/view-all-users.component'
 
 
 @NgModule({
@@ -23,13 +26,14 @@ import { ViewTeamComponent } from './components/view-team/view-team.component';
     PokemonListComponent,
     UserprofileComponent,
     CreateTeamComponent,
-    ViewTeamComponent
+    ViewTeamComponent,
+    ViewAllUsersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
