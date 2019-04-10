@@ -9,6 +9,7 @@ import { PokemonListComponent } from './components/pokemon-list/pokemon-list.com
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
 import { CreateTeamComponent } from './components/create-team/create-team.component';
 import { ViewTeamComponent } from './components/view-team/view-team.component';
+import { ViewAllUsersComponent } from './components/view-all-users/view-all-users.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'pokemon', component: PokemonListComponent },
+  { path: 'trainers', component: ViewAllUsersComponent },
   { path: 'trainers/id', component: UserprofileComponent },
   { path: 'trainers/me', component: UserprofileComponent },
   { path: 'team/new', component: CreateTeamComponent },
