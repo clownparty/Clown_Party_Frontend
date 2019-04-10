@@ -4,13 +4,13 @@
     --Primary-Light: #FFCDA4;   /*sidebar background*/
     --Primary-Dark: #FFA458;    /*header/footer backgrounds*/
 
-    --Secondary: #FFD175;
-    --Secondary-Light: #FFE1A4;
+    --Secondary: #FFD175;       /*Header text hover*/
+    --Secondary-Light: #FFE1A4; /*Header text*/
     --Secondary-Dark: #FFC758;
 
-    --Tertiary: #FF7575;
+    --Tertiary: #FF7575;        /*Sidebar text hover*/
     --Tertiary-Light: #FFA4A4;
-    --Tertiary-Dark: #FF5858;
+    --Tertiary-Dark: #FF5858;   /*Sidebar text*/
 
     --Accent: #4DA7A7;
     --Accent-Light: #41BEBE;
@@ -36,6 +36,15 @@ nav a:hover {
     color: var(--Secondary);
 }
 
+nav h1 {
+    font-size: 45px;
+}
+
+.navlink {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
 .row {
     margin: 0px;
 }
@@ -48,6 +57,7 @@ nav a:hover {
     background-color: var(--Primary-Light);
     padding: 10px;
     padding-left: 20px;
+    font-size: 24px;
 }
 
 .sidebar a, .sidebar p{
