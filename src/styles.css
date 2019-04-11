@@ -4,9 +4,9 @@
     --Primary-Light: #FFCDA4;   /*sidebar background*/
     --Primary-Dark: #FFA458;    /*header/footer backgrounds*/
 
-    --Secondary: #FFD175;       /*Header text hover*/
+    --Secondary: #FFD175;       /*Header text hover, buttons*/
     --Secondary-Light: #FFE1A4; /*Header text*/
-    --Secondary-Dark: #FFC758;
+    --Secondary-Dark: #FFC758;  /*button hover*/
 
     --Tertiary: #FF7575;        /*Sidebar text hover*/
     --Tertiary-Light: #FFA4A4;
@@ -78,3 +78,35 @@ nav h1 {
 .content-window {
     padding: 10px;
 }
+
+.profilepic {
+    width: 110px;
+    height: 110px;
+    border-radius: 100px;
+    background-color: var(--Accent);
+    margin: 10px;
+}
+
+.team-list {
+    list-style: none;
+    margin-left: 7px;
+}
+
+.profilebtn {
+    background-color: var(--Secondary);
+}
+
+.profilebtn:hover {
+    background-color: var(--Secondary-Dark);
+}
+
+/* .profilecol2 {
+    text-align: right;
+} */
+
+.favpoke {
+    text-align: center;
+}
+
+
+
