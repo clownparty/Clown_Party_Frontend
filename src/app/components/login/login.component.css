@@ -1,10 +1,10 @@
 #subscribe, 
 #login{
-	position: absolute;
+    /* position: absolute; */
 	top: 0px;
-	width: 88%;	
+	width: 70%;	
 	padding: 18px 6% 60px 6%;
-	margin: 0 0 35px 0;
+	margin: 0 auto;
 	background: rgb(247, 247, 247);
 	border: 1px solid rgba(147, 184, 189,0.8);
 	box-shadow:	
@@ -17,7 +17,7 @@
 }
 /**** general text styling ****/
 #wrapper h1{
-	font-size: 48px;
+	font-size: 36px;
 	color: rgb(6, 106, 117);
 	padding: 2px 0 10px 0;
 	font-family: 'FranchiseRegular','Arial Narrow',Arial,sans-serif;
@@ -137,7 +137,7 @@ input {
 }
 p.login.button,
 p.signin.button{
-	text-align: right;
+	text-align: center;
 	margin: 5px 0;
 }
 /* styling the checkbox "keep me logged in"*/
@@ -156,7 +156,7 @@ p.signin.button{
 .keeplogin label{
 	width: 80%;
 }
-p.change_link{
+/* p.change_link{
 	position: absolute;
 	color: rgb(127, 124, 124);
 	left: 0px;
@@ -175,7 +175,7 @@ p.change_link{
 	rgb(225, 234, 235) 30px, 
 	rgb(247, 247, 247) 30px
 	);
-}
+} */
 #wrapper p.change_link a {
 	display: inline-block;
 	font-weight: bold;
