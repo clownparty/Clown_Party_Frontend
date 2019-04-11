@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Red badge project';
+  title = "PokeTeam Builder";
   userListSubs: Subscription;
   userList: User[];
 
