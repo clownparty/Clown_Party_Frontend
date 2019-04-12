@@ -94,6 +94,7 @@ nav h1 {
 
 .profilebtn {
     background-color: var(--Secondary);
+    margin: 3px;
 }
 
 .profilebtn:hover {
