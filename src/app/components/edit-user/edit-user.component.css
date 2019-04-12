@@ -1,0 +1,22 @@
+h1 {
+    text-align: center;
+}
+
+.update-btn {
+    background-color: var(--Secondary);
+    margin: 3px;
+}
+
+.update-btn:hover {
+    background-color: var(--Secondary-Dark);
+}
+
+.piccol {
+    height: 50px;
+    width: 100px;
+    border-radius: 30px;
+}
+
+.pic {
+    background-color: var(--accent);
+}
