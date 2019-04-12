@@ -14,7 +14,9 @@ import { CreateTeamComponent } from './components/create-team/create-team.compon
 import { ViewTeamComponent } from './components/view-team/view-team.component';
 import { UserService } from './services/user.service';
 import { ViewAllUsersComponent } from './components/view-all-users/view-all-users.component';
-import { ViewAllTeamsComponent } from './components/view-all-teams/view-all-teams.component'
+import { ViewAllTeamsComponent } from './components/view-all-teams/view-all-teams.component';
+import { EditTeamComponent } from './components/edit-team/edit-team.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component'
 
 
 
@@ -30,7 +32,9 @@ import { ViewAllTeamsComponent } from './components/view-all-teams/view-all-team
     CreateTeamComponent,
     ViewTeamComponent,
     ViewAllUsersComponent,
-    ViewAllTeamsComponent
+    ViewAllTeamsComponent,
+    EditTeamComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,8 @@ import { CreateTeamComponent } from './components/create-team/create-team.compon
 import { ViewTeamComponent } from './components/view-team/view-team.component';
 import { ViewAllUsersComponent } from './components/view-all-users/view-all-users.component';
 import { ViewAllTeamsComponent } from './components/view-all-teams/view-all-teams.component';
+import { EditTeamComponent } from './components/edit-team/edit-team.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -19,11 +21,13 @@ const routes: Routes = [
   { path: 'logout', component: LogoutComponent },
   { path: 'pokemon', component: PokemonListComponent },
   { path: 'trainers', component: ViewAllUsersComponent },
-  { path: 'trainers/id', component: UserprofileComponent },
+  { path: 'trainers/<id>', component: UserprofileComponent },
   { path: 'trainers/me', component: UserprofileComponent },
+  { path: 'trainers/me/edit', component: EditUserComponent},
   { path: 'team/view', component: ViewTeamComponent },
   { path: 'team/new', component: CreateTeamComponent },
   { path: 'team', component: ViewAllTeamsComponent },
+  { path: 'team/edit', component: EditTeamComponent },
 ];
 
 @NgModule({
