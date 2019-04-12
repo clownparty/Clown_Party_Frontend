@@ -5,14 +5,14 @@
 	<div id="wrapper">
 		<div id="login" class="animate form">
 			<form  action="mysuperscript.php" autocomplete="on"> 
-				<h1>Contine Journey?</h1> 
+				<h1>Continue Journey?</h1> 
 				<p> 
 					<label for="username" class="uname" data-icon="" > Your email or username </label>
-					<input id="username" name="username" required="required" type="text" placeholder="username"/>
+					<input id="username" name="username" required="required" type="text" [value]="username" placeholder="username"/>
 				</p>
 				<p> 
 					<label for="password" class="youpasswd" data-icon=""> Your password </label>
-					<input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+					<input id="password" name="password" required="required" type="password" [value]="password" placeholder="eg. X8df!90EO" /> 
 				</p>
 				<p class="keeplogin"> 
 					<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
@@ -27,8 +27,5 @@
 				</p>
 			</form>
 		</div>
-
-		
-		
 	</div>
 </div>  
