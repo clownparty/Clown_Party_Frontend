@@ -9,7 +9,7 @@
     <h3>About</h3>
     <p>bio goes here</p>
     <!-- <p>{{ user.bio }}</p> -->
-    <button class="btn profilebtn">Edit profile</button>
+    <button class="btn profilebtn" routerLink="/trainers/me/edit">Edit profile</button>
   </div> 
   <div class="col-4 profilecol2"> 
     <div class="profilepic"></div>
@@ -21,7 +21,7 @@
     <li class="team-list"> team 2</li>
     <li class="team-list"> team 3</li>
     <br>
-    <button class="btn profilebtn">View all teams</button>
+    <button class="btn profilebtn" routerLink="/team/view">View all teams</button>
     <button class="btn profilebtn" routerLink="/team/new">Add team</button>
   </div>
   <div class="col-1"></div>
@@ -38,7 +38,7 @@
   </div>
   <div class="col-4 profilecol2"> 
     <div class="profilepic favpokepic"></div>
-    <button class="btn profilebtn changefavbtn">Change Favorite</button>
+    <button class="btn profilebtn changefavbtn" routerLink="/trainers/me/edit">Change Favorite</button>
   </div>
   <div class="col-1"></div>
 </div> 

@@ -13,6 +13,7 @@ import { ViewAllUsersComponent } from './components/view-all-users/view-all-user
 import { ViewAllTeamsComponent } from './components/view-all-teams/view-all-teams.component';
 import { EditTeamComponent } from './components/edit-team/edit-team.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { ViewUserTeamsComponent } from './components/view-user-teams/view-user-teams.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'trainers/<id>', component: UserprofileComponent },
   { path: 'trainers/me', component: UserprofileComponent },
   { path: 'trainers/me/edit', component: EditUserComponent},
-  { path: 'team/view', component: ViewTeamComponent },
+  { path: 'team/view/<id>', component: ViewTeamComponent },
+  { path: 'team/view', component: ViewUserTeamsComponent },
   { path: 'team/new', component: CreateTeamComponent },
   { path: 'team', component: ViewAllTeamsComponent },
   { path: 'team/edit', component: EditTeamComponent },
