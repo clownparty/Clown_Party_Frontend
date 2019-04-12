@@ -79,35 +79,6 @@ nav h1 {
     padding: 10px;
 }
 
-.profilepic {
-    width: 110px;
-    height: 110px;
-    border-radius: 100px;
-    background-color: var(--Accent);
-    margin: 10px;
-}
-
-.team-list {
-    list-style: none;
-    margin-left: 7px;
-}
-
-.profilebtn {
-    background-color: var(--Secondary);
-    margin: 3px;
-}
-
-.profilebtn:hover {
-    background-color: var(--Secondary-Dark);
-}
-
-/* .profilecol2 {
-    text-align: right;
-} */
-
-.favpoke {
-    text-align: center;
-}
 
 
 
