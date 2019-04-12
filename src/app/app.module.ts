@@ -17,6 +17,7 @@ import { ViewAllUsersComponent } from './components/view-all-users/view-all-user
 import { ViewAllTeamsComponent } from './components/view-all-teams/view-all-teams.component'
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
