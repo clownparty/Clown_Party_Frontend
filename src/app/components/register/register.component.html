@@ -1,34 +1,32 @@
-<form (ngSubmit)="onSubmit()" [formGroup]="_registerForm">
-  <div id="register" class="form">
-    <form  action="mysuperscript.php" autocomplete="on"> 
-      <h1> Start your journey </h1> 
-      <p> 
-        <label for="usernamesignup" class="uname" data-icon="">Username</label>
-        <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="username" />
-      </p>
-      <p> 
-        <label for="emailsignup" class="youmail" data-icon="">Email</label>
-        <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="email"/> 
-      </p>
-      <p> 
-        <label for="passwordsignup" class="youpasswd" data-icon="">Password </label>
-        <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
-      </p>
-      <p> 
-        <label for="passwordsignup_confirm" class="youpasswd" data-icon="">Confirm Password</label>
-        <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
-      </p>
-      <p> 
-        <label for="favoritepoke" class="favpokemon" data-icon="">Favorite Pokemon</label>
-        <input id="favoritepoke" name="favoritepoke" required="required" type="favoritepokemon" placeholder="enter favorite pokemon"/>
-      </p>
-      <p class="buttons"> 
-        <input type="submit" value="Sign up"/> 
-      </p>
-      <p class="changelinks">  
-        Already have a save file?
-        <a routerLink="/login" class="to_register"> Click to Start Journey </a>
-      </p>
-    </form>
-  </div>
-</form>
+<div id="register" class="form">
+  <form  action="mysuperscript.php" autocomplete="on"> 
+    <h1> Start your journey </h1> 
+    <p> 
+      <label for="usernamesignup" class="uname" data-icon="">Username</label>
+      <input id="usernamesignup" name="usernamesignup" required="required" type="text" [value]="username" placeholder="username" />
+    </p>
+    <p> 
+      <label for="emailsignup" class="youmail" data-icon="">Email</label>
+      <input id="emailsignup" name="emailsignup" required="required" type="email" [value]="email" placeholder="email"/> 
+    </p>
+    <p> 
+      <label for="passwordsignup" class="youpasswd" data-icon="">Password </label>
+      <input id="passwordsignup" name="passwordsignup" required="required" type="password" [value]="password" placeholder="eg. X8df!90EO"/>
+    </p>
+    <p> 
+      <label for="passwordsignup_confirm" class="youpasswd" data-icon="">Confirm Password</label>
+      <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" [value]="confirmpassword" placeholder="eg. X8df!90EO"/>
+    </p>
+    <p> 
+      <label for="favoritepoke" class="favpokemon" data-icon="">Favorite Pokemon</label>
+      <input id="favoritepoke" name="favoritepoke" required="required" type="favoritepokemon" [value]="favorite" placeholder="enter favorite pokemon"/>
+    </p>
+    <p class="buttons"> 
+      <input type="submit" value="Sign up"/> 
+    </p>
+    <p class="changelinks">  
+      Already have a save file?
+      <a routerLink="/login" class="to_register"> Click to Start Journey </a>
+    </p>
+  </form>
+</div>
