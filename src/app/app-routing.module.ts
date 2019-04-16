@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'trainers/<id>', component: UserprofileComponent },
   { path: 'trainers/me', component: UserprofileComponent },
   { path: 'trainers/me/edit', component: EditUserComponent},
-  { path: 'team/view/<id>', component: ViewTeamComponent },
+  { path: 'team/view/<teamname>', component: ViewTeamComponent },
   { path: 'team/view', component: ViewUserTeamsComponent },
   { path: 'team/new', component: CreateTeamComponent },
   { path: 'team', component: ViewAllTeamsComponent },
