@@ -5,8 +5,7 @@ import { Token } from '../models/Token';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 
-
-const Api_Url = ''
+const Api_Url = 'https://pokemonteam-builder.herokuapp.com'
 
 @Injectable({
   providedIn: 'root'
@@ -48,6 +47,7 @@ export class AuthenticationService {
     this._http.post('${Api_Url}/api/Account/Logout', { headers: authHeader} );
     this._router.navigate(['/login']);
   }
+
   private setHeader(): HttpHeaders {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
   }

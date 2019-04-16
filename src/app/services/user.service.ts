@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 // import { User } from '../models/user.model';
 
-const ApiUrl = "http://localhost:5000"
+const ApiUrl = "https://pokemonteam-builder.herokuapp.com"
 
 @Injectable()      //{ providedIn: 'root' }
 export class UserService {

@@ -24,3 +24,7 @@ h1 {
 #buttoncol {
     text-align: center;
 }
+
+input {
+    max-width: 100%;
+}
