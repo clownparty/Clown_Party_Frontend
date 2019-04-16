@@ -1,17 +1,18 @@
+
 <div id="container_demo" >
 	<!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
 	<a class="hiddenanchor" id="toregister"></a>
 	<a class="hiddenanchor" id="tologin"></a>
 	<div id="wrapper">
-		<div id="login" class="animate form">
-			<form  action="mysuperscript.php" autocomplete="on"> 
+		<div id="login">
+			<form autocomplete="on" (ngSubmit)="onSubmit()" [formGroup]="_loginForm"> 
 				<h1>Continue Journey?</h1> 
 				<p> 
-					<label for="username" class="uname" data-icon="" > Your email or username </label>
-					<input id="username" name="username" required="required" type="text" [value]="username" placeholder="username"/>
+					<label for="username" class="username"> Your email or username </label>
+					<input id="username" name="username" required="required" type="text" [value]="username" placeholder="username" />
 				</p>
 				<p> 
-					<label for="password" class="youpasswd" data-icon=""> Your password </label>
+					<label for="password" class="password" data-icon=""> Your password </label>
 					<input id="password" name="password" required="required" type="password" [value]="password" placeholder="eg. X8df!90EO" /> 
 				</p>
 				<p class="keeplogin"> 
@@ -28,4 +29,4 @@
 			</form>
 		</div>
 	</div>
-</div>  
+</div>
