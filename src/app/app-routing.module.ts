@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 // import { AppComponent } from './app.component';
-import { RegisterComponent } from './components/register/register.component';
+import { RegistrationComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
@@ -17,7 +17,7 @@ import { ViewUserTeamsComponent } from './components/view-user-teams/view-user-t
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'pokemon', component: PokemonListComponent },

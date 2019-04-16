@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './components/register/register.component';
+import { RegistrationComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
@@ -18,13 +18,14 @@ import { ViewAllTeamsComponent } from './components/view-all-teams/view-all-team
 import { EditTeamComponent } from './components/edit-team/edit-team.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { ViewUserTeamsComponent } from './components/view-user-teams/view-user-teams.component'
-
+import { AuthenticationService } from './services/authentication.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
+    RegistrationComponent,
     LoginComponent,
     LogoutComponent,
     HomepageComponent,
@@ -41,9 +42,11 @@ import { ViewUserTeamsComponent } from './components/view-user-teams/view-user-t
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [UserService],
+  providers: [UserService, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
