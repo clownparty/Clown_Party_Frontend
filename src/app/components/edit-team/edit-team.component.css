@@ -1,0 +1,107 @@
+h1 {
+    text-align: center;
+}
+
+label {
+    margin-right: 5px;
+}
+
+input {
+    border-radius: 5px;
+    border: none;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+select {
+    border-radius: 5PX;
+    width: 40px;
+}
+
+.naming {
+    text-align: center;
+}
+
+.pokeInfo {
+    border: 2px solid var(--Accent);
+    padding: 5px;
+}
+
+.pokeinfoTop {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#pokesearchbar {
+    max-width: 100%;
+}
+
+.pokepicLeft {
+    height: 100px;
+    width: 100px;
+    background-color: var(--Accent);
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.pokepic {
+    min-height: 50px;
+    min-width: 50px;
+    width: 75%;
+    padding-top: 75%;
+    background-color: var(--Accent);
+    border-radius: 150px;
+}
+
+.slot {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.slot h3 {
+    margin-right: 5px;
+    margin-top: 25%;
+}
+
+#slot1h3 {
+    margin-right: 8px;
+}
+
+.chooseSlot{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chooseSlot h4 {
+    margin-right: 10px;
+}
+
+.catch-btn {
+    height: 50px;
+    width: 50px;
+    border-radius: 150px;
+    background-color: var(--Accent-Dark);
+    margin-left: 20px;
+}
+
+.btn-row {
+    text-align: center;
+}
+
+.my-btn {
+    background-color: var(--Secondary);
+    margin: 3px;
+}
+.my-btn:hover {
+    background-color: var(--Secondary-Dark);
+}
+
+.del-btn {
+    background-color: var(--Tertiary);
+    margin: 3px;
+}
+
+.del-btn:hover {
+    background-color: var(--Tertiary-Dark)
+}
