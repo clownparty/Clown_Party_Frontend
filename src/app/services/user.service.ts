@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, config } from 'rxjs';
 // import { User } from '../models/user.model';
 
 const ApiUrl = "https://pokemonteam-builder.herokuapp.com"
@@ -14,8 +14,24 @@ export class UserService {
     return Observable.throw(err.message || 'Error: Unable to complete request');
   }
 
+  getAll() {
+    return this.http.get<User[]>(`${ApiUrl}/user`);
+  }
+
+  getById(id: number) {
+    return this.http.get(`${ApiUrl}/user` + id);
+  }
+
   getUser(): Observable<any>  {
-    return this.http.get(`${ApiUrl}/trainers`)
+    return this.http.get(`${ApiUrl}/trainers`);
+  }
+
+  update(user: User) {
+    return this.http.put(`${ApiUrl}/user/` + user.id, user);
+  }
+
+  delete(id: number) {
+    return this.http.delete(`${ApiUrl}/user/` + id);
   }
 
   testRequest(data:any): Observable<any> {
