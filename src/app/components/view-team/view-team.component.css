@@ -25,3 +25,16 @@ h1 {
     display: flex;
     flex-wrap: wrap;
 }
+
+.edit-btn {
+    background-color: var(--Secondary);
+    margin: 3px;
+}
+
+.edit-btn:hover {
+    background-color: var(--Secondary-Dark);
+}
+
+.pokepics {
+    text-align: center;
+}
