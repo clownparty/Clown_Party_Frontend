@@ -20,6 +20,7 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { ViewUserTeamsComponent } from './components/view-user-teams/view-user-teams.component'
 import { AuthenticationService } from './services/authentication.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AlertService } from './services/AlertService';
 
 
 @NgModule({
@@ -46,7 +47,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [UserService, AuthenticationService],
+  providers: [UserService, AuthenticationService, AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
