@@ -15,11 +15,13 @@ export class UserService {
   }
 
   getAll() {
+
     return this.http.get<User[]>(`${ApiUrl}/trainers`);
   }
 
   getById(id: number) {
     return this.http.get(`${ApiUrl}/trainers/` + id);
+
   }
 
   getUser(): Observable<any>  {
@@ -27,11 +29,13 @@ export class UserService {
   }
 
   update(user: User) {
+
     return this.http.put(`${ApiUrl}/trainers/me/edit`, user);
   }
 
   delete(id: number) {
     return this.http.delete(`${ApiUrl}/trainers/me/edit`);
+
   }
 
   testRequest(data:any): Observable<any> {
