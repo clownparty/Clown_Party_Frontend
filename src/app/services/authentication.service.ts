@@ -5,7 +5,7 @@ import { Token } from '../models/Token';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 
-const Api_Url = 'https://pokemonteam-builder.herokuapp.com'
+const Api_Url = 'https://pokemonteam-builder.herokuapp.com/api/v1'
 
 @Injectable({
   providedIn: 'root'
@@ -13,21 +13,23 @@ const Api_Url = 'https://pokemonteam-builder.herokuapp.com'
 export class AuthenticationService {
   userInfo: Token;
   isLoggedIn = new Subject<boolean>();
+  user_id = new Subject<number>();
 
   constructor(private _http: HttpClient, private _router: Router) { }
 
   register(regUserData: User) {
-    return this._http.post(`${Api_Url}/api/Account/Register`, regUserData);
+    return this._http.post(`${Api_Url}/register`, regUserData);
   }
 
   login(loginInfo) {
     const str = 
       `grant-type=password&username=${encodeURI(loginInfo.email)}&password=${encodeURI(loginInfo.password)}`
     
-    return this._http.post(`${Api_Url}/token`, str).subscribe( (token: Token) => {
-      this.userInfo = token;
-      localStorage.setItem('id_token', token.access_token);
+    return this._http.post(`${Api_Url}/token`, str).subscribe( (token: any) => {
+      // this.userInfo = token;
+      localStorage.setItem('id_token', token.token);
       this.isLoggedIn.next(true);
+      this.user_id.next(token.user_id);
       this._router.navigate(['/']);
     });
   }
@@ -35,20 +37,20 @@ export class AuthenticationService {
   currentUser(): Observable<Object> {
     if (!localStorage.getItem('id_token')) { return new Observable(observer => observer.next(false)); }
 
-    return this._http.get(`${Api_Url}/api/Account/UserInfo`, { headers: this.setHeader() });
+    return this._http.get(`${Api_Url}/trainers/me`, { headers: this.setHeader() });
   }
 
   logout() {
     localStorage.clear();
     this.isLoggedIn.next(false);
 
-    const authHeader = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+    const authHeader = new HttpHeaders().set('api-token', `${localStorage.getItem('id_token')}`);
 
-    this._http.post('${Api_Url}/api/Account/Logout', { headers: authHeader} );
+    this._http.post(`${Api_Url}/logout`, { headers: authHeader} );
     this._router.navigate(['/login']);
   }
 
   private setHeader(): HttpHeaders {
-    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+    return new HttpHeaders().set('api-token', `${localStorage.getItem('id_token')}`);
   }
 }

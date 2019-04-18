@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+}
+
+.btn-line {
+    text-align: center;
+}
+
+.back-btn {
+    background-color: var(--Secondary);
+    margin: 3px;
+}
+
+.back-btn:hover {
+    background-color: var(--Secondary-Dark);
+}

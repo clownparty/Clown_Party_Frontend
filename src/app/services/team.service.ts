@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, config } from 'rxjs';
-import { User } from '../models/user.model';
+import { Team } from '../models/team.model';
 
 const ApiUrl = "https://pokemonteam-builder.herokuapp.com/api/v1"
 
@@ -15,31 +15,23 @@ export class UserService {
   }
 
   getAll() {
-
-    return this.http.get<User[]>(`${ApiUrl}/trainers`);
+    return this.http.get<Team[]>(`${ApiUrl}/team`);
   }
 
-  getById(id: number) {
-    return this.http.get(`${ApiUrl}/trainers/` + id);
-
+  getByName(teamname: string) {
+    return this.http.get(`${ApiUrl}/team/view/`);
   }
 
-  getUser(): Observable<any>  {
-    return this.http.get(`${ApiUrl}/trainers/me`);
+  getTeams(): Observable<any>  {
+    return this.http.get(`${ApiUrl}/team/view`);
   }
 
-  update(user: User) {
-
-    return this.http.put(`${ApiUrl}/trainers/me/edit`, user);
+  update(team: Team) {
+    return this.http.put(`${ApiUrl}/team/edit`, team);
   }
 
   delete(id: number) {
-    return this.http.delete(`${ApiUrl}/trainers/me/edit`);
-
-  }
-
-  testRequest(data:any): Observable<any> {
-    return this.http.post(`${ApiUrl}/test`, data)
+    return this.http.delete(`${ApiUrl}/team/edit`);
   }
 
 }

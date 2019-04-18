@@ -5,16 +5,16 @@
   <!-- Searchbar -->
 
   <!-- If logged in -->
-  <!-- <div *ngIf=""> -->
+  <div *ngIf="isLoggedIn">
     <a routerLink="/trainers/me" class="navlink"> Profile </a>
     <a routerLink="/logout" class="navlink"> Logout </a>
-  <!-- </div> -->
+  </div>
 
   <!-- If not logged in -->
-  <!-- <div *ngIf=""> -->
+  <div *ngIf="!isLoggedIn">
     <a routerLink="/login" class="navlink">Login </a>
     <a routerLink="/register" class="navlink">Register </a>
-  <!-- </div> -->
+  </div>
 </nav>
 
 <div class="row">
@@ -22,10 +22,12 @@
   <div class="col-8 content-window">
     <router-outlet></router-outlet>
   </div>
-  <div class="col-2 sidebar">
+  <div class="col-2 sidebar buffer">
     <p><a routerLink="/pokemon">Pok&eacute;dex</a></p>
     <p><a routerLink="/trainers">Trainers</a></p>
-    <p><a routerLink="/team/new">Create Team</a></p>
+    <div *ngIf="isLoggedIn">
+      <p><a routerLink="/team/new">Create Team</a></p>
+    </div>
     <p><a routerLink="/team">View Team</a></p>
     <p>Random Team</p>
   </div>
