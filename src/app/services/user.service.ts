@@ -34,12 +34,8 @@ export class UserService {
   }
 
   delete(id: number) {
-    return this.http.delete(`${ApiUrl}/trainers/me/edit`);
+    return this.http.delete(`${ApiUrl}/trainers/edit`);
 
-  }
-
-  testRequest(data:any): Observable<any> {
-    return this.http.post(`${ApiUrl}/test`, data)
   }
 
 }

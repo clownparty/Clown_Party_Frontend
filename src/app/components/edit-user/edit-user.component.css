@@ -11,6 +11,15 @@ h1 {
     background-color: var(--Secondary-Dark);
 }
 
+.del-btn {
+    background-color: var(--Tertiary);
+    margin: 3px;
+}
+
+.del-btn:hover {
+    background-color: var(--Tertiary-Dark);
+}
+
 .piccol {
     height: 75px;
     width: 75px;
