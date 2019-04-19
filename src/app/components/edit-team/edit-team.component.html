@@ -3,7 +3,7 @@
 
 <div class="naming">
   <label for="teamName">Team Name: </label>
-  <input name="teamName" value="{{team.teamname}}">
+  <input name="teamName" [(ngModel)]="team.teamname" value="{{team.teamname}}">
 </div>
 <br><br>
 
@@ -19,7 +19,7 @@
       </div>
       <!-- <h5>Description</h5>
       <p>filler text gers grejfokn rgeiojgre rgeojjg qro 3powfk gerklfn qwrjfwaskn aefd wefas</p> -->
-      <input name="pokeSearch" placeholder="search for pokemon" id="pokesearchbar">
+      <input name="pokeSearch" [(ngModel)]="pokemon.name" placeholder="search for pokemon" id="pokesearchbar">
       <button type="submit" for="pokeSearch" class="btn my-btn">Search</button>
     </div>
     <br>
@@ -72,6 +72,6 @@
 </div>
 <br>
 <div class="btn-row">
-  <button type="submit" class="btn my-btn" routerLink="/trainers/me">Save and finish</button>
-  <button type="submit" class="btn del-btn" routerLink="/trainers/me">Delete</button>
+  <button class="btn my-btn" routerLink="/trainers/me">Save and finish</button>
+  <button action="" class="btn del-btn" routerLink="/trainers/me">Delete</button>
 </div>
