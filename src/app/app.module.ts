@@ -21,6 +21,12 @@ import { ViewUserTeamsComponent } from './components/view-user-teams/view-user-t
 import { AuthenticationService } from './services/authentication.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlertService } from './services/AlertService';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule
+} from "@angular/material";
 
 
 @NgModule({
@@ -38,10 +44,12 @@ import { AlertService } from './services/AlertService';
     ViewAllTeamsComponent,
     EditTeamComponent,
     EditUserComponent,
-    ViewUserTeamsComponent
+    ViewUserTeamsComponent,
+    
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
