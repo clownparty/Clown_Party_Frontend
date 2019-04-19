@@ -47,6 +47,7 @@ get f() { return this._loginForm.controls; }
 
   onSubmit() {
     console.log(this._loginForm.value);
+    this.router.navigate(['/'])
     this._form
   }
 }

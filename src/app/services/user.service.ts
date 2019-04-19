@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, config } from 'rxjs';
 // import { User } from '../models/user.model';
 
-const ApiUrl = "https://pokemonteam-builder.herokuapp.com"
+const ApiUrl = "https://pokemonteam-builder.herokuapp.com/api/v1"
 
 @Injectable()      //{ providedIn: 'root' }
 export class UserService {
@@ -15,7 +15,7 @@ export class UserService {
   }
 
   getAll() {
-    return this.http.get<User[]>(`${ApiUrl}/User`);
+    return this.http.get<any[]>(`${ApiUrl}/User`);
   }
 
   getById(id: number) {
@@ -26,7 +26,7 @@ export class UserService {
     return this.http.get(`${ApiUrl}/trainers`);
   }
 
-  update(user: User) {
+  update(user: any) {
     return this.http.put(`${ApiUrl}/User/` + user.id, user);
   }
 
