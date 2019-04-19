@@ -13,14 +13,14 @@
     <label for="fave">Favorite Pokemon: </label>
   </div>
   <div class="col-3">
-    <input name="name">
+    <input name="name" [(ngModel)]="user.name" [value]="name">
     <br>
     <br>
     <br>
-    <!-- <input name="about">
+    <!-- <input name="about" [value]="bio">
     <br>
     <br> -->
-    <input name="fave">
+    <input name="fave" [(ngModel)]="user.fav_poke" [value]="fav_poke">
     <br>
     <small id="small1">Input a pok&eacute;mon</small>
     <!-- <small id="small2">Found!</small>
@@ -38,7 +38,8 @@
 <div class="row">
   <div class="col-5"></div>
   <div class="col-2" id="buttoncol">
-    <button class="btn update-btn" routerLink="/trainers/me">Update</button>
+    <button type="submit" class="btn update-btn" routerLink="/trainers/me">Update</button>
+    <button type="delete" name="delete" class="btn del-btn" routerLink="/">Delete Profile</button>
   </div>
   <div class="col-5"></div>
 </div>

@@ -6,7 +6,7 @@ import { Pokemon } from '../models/pokemon.model';
 const ApiUrl = "https://pokemonteam-builder.herokuapp.com/api/v1"
 
 @Injectable()      //{ providedIn: 'root' }
-export class UserService {
+export class PokemonService {
 
   constructor(private http: HttpClient) { }
 
