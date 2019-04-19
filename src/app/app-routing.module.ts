@@ -15,6 +15,7 @@ import { EditTeamComponent } from './components/edit-team/edit-team.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { ViewUserTeamsComponent } from './components/view-user-teams/view-user-teams.component';
 
+
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'register', component: RegistrationComponent },
@@ -22,10 +23,10 @@ const routes: Routes = [
   { path: 'logout', component: LogoutComponent },
   { path: 'pokemon', component: PokemonListComponent },
   { path: 'trainers', component: ViewAllUsersComponent },
-  { path: 'trainers/:id', component: UserprofileComponent },
+  { path: 'trainers/<id>', component: UserprofileComponent },
   { path: 'trainers/me', component: UserprofileComponent },
   { path: 'trainers/me/edit', component: EditUserComponent},
-  { path: 'team/view/:teamname', component: ViewTeamComponent },
+  { path: 'team/view/<teamname>', component: ViewTeamComponent },
   { path: 'team/view', component: ViewUserTeamsComponent },
   { path: 'team/new', component: CreateTeamComponent },
   { path: 'team', component: ViewAllTeamsComponent },

@@ -15,12 +15,8 @@ export class UserService {
   }
 
   getAll() {
-<<<<<<< HEAD
-    return this.http.get<any[]>(`${ApiUrl}/User`);
-=======
 
     return this.http.get<User[]>(`${ApiUrl}/trainers`);
->>>>>>> 51376d03024951d3c4f422455fb566e625fd08a6
   }
 
   getById(id: number) {
@@ -32,14 +28,9 @@ export class UserService {
     return this.http.get(`${ApiUrl}/trainers/me`);
   }
 
-<<<<<<< HEAD
-  update(user: any) {
-    return this.http.put(`${ApiUrl}/User/` + user.id, user);
-=======
   update(user: User) {
 
     return this.http.put(`${ApiUrl}/trainers/me/edit`, user);
->>>>>>> 51376d03024951d3c4f422455fb566e625fd08a6
   }
 
   delete(id: number) {
