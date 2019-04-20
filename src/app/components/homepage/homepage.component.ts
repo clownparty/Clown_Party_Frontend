@@ -11,7 +11,7 @@ export class HomepageComponent implements OnInit {
   constructor(private userApi: UserService) { }
 
   ngOnInit() {
-    this.userApi.testRequest('hello').subscribe(data => console.log(data))
+    
   }
 
 }

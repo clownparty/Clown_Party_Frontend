@@ -9,19 +9,21 @@
 
 <div class="row">
   <div class="col-5">
-    <div class="pokeInfo">
+    <form class="pokeInfo">
       <div class="pokeinfoTop">
         <div class="pokepicLeft"></div>
         <div>
           <h3>Name</h3>
           <h4>#</h4>
+          <h3>{{pokemon.name}}</h3>
+          <h4>{{pokemon.id}}</h4>
         </div>
       </div>
       <!-- <h5>Description</h5>
       <p>filler text gers grejfokn rgeiojgre rgeojjg qro 3powfk gerklfn qwrjfwaskn aefd wefas</p> -->
-      <input name="pokeSearch" [(ngModel)]="pokemon.name" placeholder="search for pokemon" id="pokesearchbar">
+      <input name="pokeSearch" [(ngModel)]="pokemon.name" placeholder="search for pok&eacute;mon" id="pokesearchbar">
       <button type="submit" for="pokeSearch" class="btn my-btn">Search</button>
-    </div>
+    </form>
     <br>
     <div class="slots">
       <h3>Add to Team</h3>
@@ -33,7 +35,7 @@
           <option value="{{team.slot3}}">3</option>
           <option value="{{team.slot4}}">4</option>
           <option value="{{team.slot5}}">5</option>
-          <option value="{{team.slot6}}">6</option>      
+          <option value="{{team.slot6}}">6</option>     
         </select>
         <button for="slotNum" class="btn catch-btn" title="catch pok&eacute;mon! (confirm)"></button>
       </div>
@@ -73,5 +75,5 @@
 <br>
 <div class="btn-row">
   <button class="btn my-btn" routerLink="/trainers/me">Save and finish</button>
-  <button action="" class="btn del-btn" routerLink="/trainers/me">Delete</button>
+  <button class="btn del-btn" routerLink="/trainers/me">Delete</button>
 </div>
