@@ -14,6 +14,10 @@ export class TeamService {
     return Observable.throw(err.message || 'Error: Unable to complete request');
   }
 
+  createTeam(teamData: Team) {
+    return this.http.post(`${ApiUrl}/team/new`, teamData);
+  }
+
   getAll() {
     return this.http.get<Team[]>(`${ApiUrl}/team`);
   }
