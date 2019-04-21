@@ -50,6 +50,7 @@ export class AuthenticationService {
     this._router.navigate(['/login']);
   }
 
+
   private setHeader(): HttpHeaders {
     return new HttpHeaders().set('api-token', `${localStorage.getItem('id_token')}`);
   }

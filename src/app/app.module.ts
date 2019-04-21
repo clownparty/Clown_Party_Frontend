@@ -22,6 +22,8 @@ import { AuthenticationService } from './services/authentication.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlertService } from './services/AlertService';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TeamService } from './services/team.service';
+import { PokemonService } from './services/pokemon.service';
 
 
 
@@ -51,7 +53,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [UserService, AuthenticationService, AlertService],
+  providers: [UserService, AuthenticationService, AlertService, TeamService, PokemonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
