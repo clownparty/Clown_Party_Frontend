@@ -1,5 +1,5 @@
 export class Pokemon {
-    public id: Number;
+    public id: number;
     public name: string;
     public desc: string;
     // public type1: string;

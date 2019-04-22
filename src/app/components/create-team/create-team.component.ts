@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../../services/team.service';
 import { PokemonService } from '../../services/pokemon.service';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
@@ -11,52 +10,49 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class CreateTeamComponent implements OnInit {
   logUser: number;
+  teamName: string;
+  searchQuery: string;
+  selPoke: any;
+  slotSel: number;
+  teamId: number;
+  sTeam = {
+    owner_id: undefined,
+    teamname: undefined,
+    id: undefined,
+    slot1: undefined,
+    slot2: undefined,
+    slot3: undefined,
+    slot4: undefined,
+    slot5: undefined,
+    slot6: undefined,
+  }
 
-  private _createTeam: FormGroup;
-
-  constructor(private _form: FormBuilder, private _teamService: TeamService, private authservice: AuthenticationService) { this.createForm(); }
+  constructor(private _teamService: TeamService, private pokeService:PokemonService, private authservice: AuthenticationService) { }
 
   onSubmit() {
+    this.sTeam.teamname = this.teamName;
+    this.sTeam.id = this.teamId;
     this._teamService
-      .createTeam(this._createTeam.value);
-      // .subscribe( () => this._authService.createTeam(this._createTeam.value));
-
-      // should also assign it an id number (assign on submit to prevent unused ids when someone starts to make a team, then quits without saving)
+      .createTeam(this.sTeam)
+      .subscribe(
+      //   (val, err) => {
+      //   if(err){console.log(err);}
+      //   else{console.log(val)}
+      // });
+      )
   }
 
   ngOnInit() {
     this.authservice.user_id.subscribe(status => this.logUser=status);
+    this.sTeam.owner_id = this.logUser
   }
 
-  searchPoke(name) {
-    // takes name, converts to id, returns as object (observable?) that can then have its information displayed
-    // in python, would do for loop and find same name, then grab that instance... not sure how to do it in typescript 
+  searchPoke() {
+    this.pokeService.getByName(this.searchQuery).subscribe(val => this.selPoke=val);
   }
   
-  addSlot(slotNum) { 
-    // save selected pokemon to selected slot
-  }
-
-  createForm() {
-    this._createTeam = this._form.group({
-      id: new FormControl,
-      owner_id: new FormControl,
-      teamname: new FormControl,
-      slot1: new FormControl,
-      slot2: new FormControl,
-      slot3: new FormControl,
-      slot4: new FormControl,
-      slot5: new FormControl,
-      slot6: new FormControl,
-    });
+  addSlot() { 
+    this.sTeam[`slot${this.slotSel}`] = this.selPoke;
   }
 
 }
-
-
-// need to be able to: 
-// 1) grab name from teamName input
-// 2) search for pokemon input in pokeSearch input and display their information
-// 3) somehow hook up the select component so that each slot in the dropdown actually connects with the appropriate slot?
-// 3.5) pressing the button saves the selected pokemon to the selected slot
-// 4) at some point grab the user's id and give it to the team's owner property
