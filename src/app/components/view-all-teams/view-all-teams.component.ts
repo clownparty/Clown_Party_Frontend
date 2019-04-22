@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-all-teams.component.css']
 })
 export class ViewAllTeamsComponent implements OnInit {
+  teamList = [];
 
   constructor() { }
 
   ngOnInit() {
+    // retrive all teams and put them in teamList (ideally paginated)
   }
 
 }

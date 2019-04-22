@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../../services/team.service';
 import { PokemonService } from '../../services/pokemon.service';
+import { Team } from 'src/app/models/team.model';
 
 @Component({
   selector: 'app-edit-team',
@@ -8,10 +9,39 @@ import { PokemonService } from '../../services/pokemon.service';
   styleUrls: ['./edit-team.component.css']
 })
 export class EditTeamComponent implements OnInit {
+  team: Team;
+  id: number;
 
-  constructor() { }
+  constructor(private teamService: TeamService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getTeam();
+  }
+
+  onSubmit() {
+    this.teamService
+      .update(this.team);
+      // .subscribe( () => this._authService.createTeam(this._createTeam.value));
+
+      // needs to grab the correct values for teamname and slots; i'm not sure if it will as is?
+      // should also assign it an id number
+  }
+
+  getTeam(): void {
+    this.teamService.getTeams().subscribe(team => this.team = team);
+    this.id = this.team.id
+  }
+
+  delTeam(): void {
+    this.teamService.delete(this.id);
+  }
+
+  addSlot(slotNum) { 
+    // save selected pokemon to selected slot
+  }
+
+  searchPoke(name) {
+    // takes name, converts to id, returns as object (observable?) that can then have its information displayed
   }
 
 }

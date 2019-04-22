@@ -14,8 +14,9 @@ input {
 }
 
 select {
-    border-radius: 5PX;
+    border-radius: 5px;
     width: 40px;
+    height: 30px;
 }
 
 .naming {
