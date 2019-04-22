@@ -2,28 +2,24 @@
 <div id="container_demo" >
 	<div id="wrapper">
 		<div id="login">
-			<form (ngSubmit)="onSubmit()" [formGroup]="_loginForm"> 
+			<form (ngSubmit)="onSubmit()"> 
 				<h1>Continue Journey?</h1> 
 				<p> 
 					<label for="username" class="username"> Your email or username </label>
-					<input id="username" name="username" required="required" type="text" placeholder="username" />
+					<input id="username" name="username" required="required" type="text" placeholder="username" [(ngModel)]="username" />
 				</p>
 				<p> 
-					<label for="password" class="password" data-icon=""> Your password </label>
-					<input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
-				</p>
-				<p class="keeplogin"> 
-					<input type="checkbox" name="loginkeeping" id="loginkeeping" /> 
-					<label for="loginkeeping">Keep me logged in</label>
+					<label for="password" class="password"> Your password </label>
+					<input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" [(ngModel)]="password" /> 
 				</p>
 				<p class="buttons"> 
-					<a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Login</a>
+					<button class="btn btn-primary btn-lg active" type="submit">Login</button>
 				  </p>
-				<p class="change_link">
-					Start a new journey? 
-					<a routerLink="/register" class="to_register">Start Journey</a>
-				</p>
 			</form>
+			<p class="change_link">
+				Start a new journey? 
+				<a routerLink="/register" class="to_register">Start Journey</a>
+			</p>
 		</div>
 	</div>
 </div>
