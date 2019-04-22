@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, config } from 'rxjs';
 import { User } from '../models/user.model';
 
-const ApiUrl = "https://pokemonteam-builder.herokuapp.com/api/v1"
+const ApiUrl = "https://pokemonteam-builder.herokuapp.com/api/v1/users"
 
 @Injectable()      //{ providedIn: 'root' }
 export class UserService {
