@@ -9,7 +9,7 @@ import { AuthenticationService } from '../../services/authentication.service';
   styleUrls: ['./create-team.component.css']
 })
 export class CreateTeamComponent implements OnInit {
-  logUser: number;
+  // logUser: number;
   teamName: string;
   searchQuery: string;
   selPoke: any;
@@ -34,17 +34,12 @@ export class CreateTeamComponent implements OnInit {
     this.sTeam.id = this.teamId;
     this._teamService
       .createTeam(this.sTeam)
-      .subscribe(
-      //   (val, err) => {
-      //   if(err){console.log(err);}
-      //   else{console.log(val)}
-      // });
-      )
+      .subscribe()
   }
 
   ngOnInit() {
-    this.authservice.user_id.subscribe(status => this.logUser=status);
-    this.sTeam.owner_id = this.logUser
+    // this.authservice.user_id.subscribe(status => this.logUser=status);
+    // this.sTeam.owner_id = this.logUser
   }
 
   searchPoke() {
