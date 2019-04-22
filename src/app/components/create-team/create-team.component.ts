@@ -18,9 +18,21 @@ export class CreateTeamComponent implements OnInit {
     this._teamService
       .createTeam(this._createTeam.value);
       // .subscribe( () => this._authService.createTeam(this._createTeam.value));
+
+      // needs to grab the correct values for teamname and slots; i'm not sure if it will as is?
+      // should also assign it an id number
   }
 
   ngOnInit() {
+    // grab id of logged-in user and save to owner_id
+  }
+
+  addSlot(slotNum) { 
+    // save selected pokemon to selected slot
+  }
+
+  searchPoke(name) {
+    // takes name, converts to id, returns as object (observable?) that can then have its information displayed
   }
 
   createForm() {

@@ -1,37 +1,41 @@
 <br>
 <h1>Team Name</h1>
+<br>
 <div class="row">
   <div class="col-6 pokepics">
     <div class="row">
       <div class="col-4">
-        <div name="slot1" class="pokepic"></div>
+        <div name="slot1" class="pokepic" *ngIf="team.slot1" (click)="selPoke(slot1)">{{team.slot1.image}}</div>
       </div>
       <div class="col-4">
-        <div name="slot2" class="pokepic"></div>
+        <div name="slot2" class="pokepic" *ngIf="team.slot2" (click)="selPoke(slot2)">{{team.slot2.image}}</div>
       </div>
       <div class="col-4">
-        <div name="slot3" class="pokepic"></div>
+        <div name="slot3" class="pokepic" *ngIf="team.slot3" (click)="selPoke(slot3)">{{team.slot3.image}}</div>
       </div>
     </div>
     <div class="row">
       <div class="col-4">
-        <div name="slot4" class="pokepic"></div>
+        <div name="slot4" class="pokepic" *ngIf="team.slot4"(click)="selPoke(slot4)">{{team.slot4.image}}</div>
       </div>
       <div class="col-4">
-        <div name="slot5" class="pokepic"></div>
+        <div name="slot5" class="pokepic" *ngIf="team.slot5"(click)="selPoke(slot5)">{{team.slot5.image}}</div>
       </div>
       <div class="col-4">
-        <div name="slot6" class="pokepic"></div>
+        <div name="slot6" class="pokepic" *ngIf="team.slot6"(click)="selPoke(slot6)">{{team.slot6.image}}</div>
       </div>
     </div>
+    <br>
     <button class="btn edit-btn" routerLink="/team/edit">Edit</button>
   </div>
   <div class="col-6 selectedDesc">
     <div class="flex-container">
-      <div class="selPokePic"></div>
+      <div class="selPokePic">{{setPoke.image}}</div>
       <div>
         <h3>Pok&eacute;mon</h3>
         <h4>Pok&eacute;mon #</h4>
+        <h3>{{setPoke.name}}</h3>
+        <h4>{{setPoke.number}}</h4>
         <!-- <h5>Type2/ Type1</h5> -->
       </div>
     </div>   

@@ -1,5 +1,5 @@
 export class Team {
-    public id: Number;
+    public id: number;
     public owner_id: number;
     public teamname: string;
     public slot1: number;

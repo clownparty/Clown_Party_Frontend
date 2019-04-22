@@ -12,7 +12,7 @@
     <div class="col-5">
       <div class="pokeInfo">
         <div class="pokeinfoTop">
-          <div class="pokepicLeft"></div>
+          <div class="pokepicLeft">{{pokemon.image}}</div>
           <div>
             <h3>Name</h3>
             <h4>#</h4>
@@ -23,7 +23,7 @@
         <!-- <h5>Description</h5>
         <p>filler text gers grejfokn rgeiojgre rgeojjg qro 3powfk gerklfn qwrjfwaskn aefd wefas</p> -->
         <input name="pokeSearch" [(ngModel)]="pokemon.name" placeholder="search for pok&eacute;mon" id="pokesearchbar">
-        <button type="submit" for="pokeSearch" class="btn my-btn">Search</button>
+        <button type="submit" for="pokeSearch" class="btn my-btn" (click)="searchPoke(pokeSearch.input)">Search</button>
         </div>
       <br>
       <div class="slots">
@@ -38,7 +38,7 @@
             <option value="slot5">5</option>
             <option value="slot6">6</option>      
           </select>
-          <button for="slotNum" class="btn catch-btn" title="catch pok&eacute;mon! (confirm)"></button>
+          <button for="slotNum" class="btn catch-btn" title="catch pok&eacute;mon! (confirm)" (click)="addSlot(slotNum.value)"></button>
         </div>
       </div> 
     </div>
@@ -46,35 +46,35 @@
       <div class="col-6">
           <div class="slot">
             <h3 id="slot1h3">1 </h3>
-            <div class="pokepic"></div>
+            <div class="pokepic" *ngIf="team.slot1">{{team.slot1.image}}</div>
           </div>
           <div class="slot">
             <h3>3</h3>
-            <div class="pokepic"></div>
+            <div class="pokepic" *ngIf="team.slot3">{{team.slot3.image}}</div>
           </div>
           <div class="slot">
             <h3>5</h3>
-            <div class="pokepic"></div>
+            <div class="pokepic" *ngIf="team.slot5">{{team.slot5.image}}</div>
           </div>
       </div>
       <div class="col-6">
         <div class="slot">
           <h3>2</h3>
-          <div class="pokepic"></div>
+          <div class="pokepic" *ngIf="team.slot2">{{team.slot2.image}}</div>
         </div>
         <div class="slot">
           <h3>4</h3>
-          <div class="pokepic"></div>
+          <div class="pokepic" *ngIf="team.slot4">{{team.slot4.image}}</div>
         </div>
         <div class="slot">
           <h3>6</h3>
-          <div class="pokepic"></div>
+          <div class="pokepic" *ngIf="team.slot6">{{team.slot6.image}}</div>
         </div>
       </div>
     </div>
     <br>
     <div class="btn-row">
-      <button type="submit" class="btn my-btn" routerLink="/trainers/me">Save and finish</button>
+      <button type="submit" class="btn my-btn" routerLink="/trainers/me" (click)="onSubmit()">Save and finish</button>
     </div>
   </div>
 </form>

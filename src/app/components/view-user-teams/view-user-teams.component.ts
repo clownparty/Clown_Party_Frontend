@@ -7,10 +7,12 @@ import { Location } from '@angular/common';
   styleUrls: ['./view-user-teams.component.css']
 })
 export class ViewUserTeamsComponent implements OnInit {
+  userTeamList = [];
 
   constructor(private location: Location) { }
 
   ngOnInit() {
+    // retrieve teams with owner_id == logged-in user's id and put in userTeamList (ideally paginated)
   }
 
   goBack(): void {
