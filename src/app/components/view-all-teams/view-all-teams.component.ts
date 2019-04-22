@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TeamService } from '../../services/team.service';
 
 @Component({
   selector: 'app-view-all-teams',
@@ -8,10 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class ViewAllTeamsComponent implements OnInit {
   teamList = [];
 
-  constructor() { }
+  constructor(private teamService: TeamService) { }
 
   ngOnInit() {
-    // retrive all teams and put them in teamList (ideally paginated)
+    this.teamService.getAll().subscribe(add => this.teamList.push(add));
   }
 
 }
