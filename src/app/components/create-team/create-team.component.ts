@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../../services/team.service';
 import { PokemonService } from '../../services/pokemon.service';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms'
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-create-team',
@@ -9,30 +10,31 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms'
   styleUrls: ['./create-team.component.css']
 })
 export class CreateTeamComponent implements OnInit {
+  logUser: number;
 
   private _createTeam: FormGroup;
 
-  constructor(private _form: FormBuilder, private _teamService: TeamService) { this.createForm(); }
+  constructor(private _form: FormBuilder, private _teamService: TeamService, private authservice: AuthenticationService) { this.createForm(); }
 
   onSubmit() {
     this._teamService
       .createTeam(this._createTeam.value);
       // .subscribe( () => this._authService.createTeam(this._createTeam.value));
 
-      // needs to grab the correct values for teamname and slots; i'm not sure if it will as is?
-      // should also assign it an id number
+      // should also assign it an id number (assign on submit to prevent unused ids when someone starts to make a team, then quits without saving)
   }
 
   ngOnInit() {
-    // grab id of logged-in user and save to owner_id
-  }
-
-  addSlot(slotNum) { 
-    // save selected pokemon to selected slot
+    this.authservice.user_id.subscribe(status => this.logUser=status);
   }
 
   searchPoke(name) {
     // takes name, converts to id, returns as object (observable?) that can then have its information displayed
+    // in python, would do for loop and find same name, then grab that instance... not sure how to do it in typescript 
+  }
+  
+  addSlot(slotNum) { 
+    // save selected pokemon to selected slot
   }
 
   createForm() {

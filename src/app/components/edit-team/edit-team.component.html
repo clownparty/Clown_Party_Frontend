@@ -20,8 +20,9 @@
             <h4>{{pokemon.id}}</h4>
           </div>
         </div>
-        <!-- <h5>Description</h5>
-        <p>filler text gers grejfokn rgeiojgre rgeojjg qro 3powfk gerklfn qwrjfwaskn aefd wefas</p> -->
+        <h5>Description</h5>
+        <p>filler text gers grejfokn rgeiojgre rgeojjg qro 3powfk gerklfn qwrjfwaskn aefd wefas</p>
+        <p>{{pokemon.desc}}</p>
         <input name="pokeSearch" [(ngModel)]="pokemon.name" placeholder="search for pok&eacute;mon" id="pokesearchbar">
         <button type="submit" for="pokeSearch" class="btn my-btn">Search</button>
         </div>
@@ -38,7 +39,7 @@
             <option value="slot5">5</option>
             <option value="slot6">6</option>      
           </select>
-          <button for="slotNum" class="btn catch-btn" title="catch pok&eacute;mon! (confirm)" (click)="addSlot(slotNum.value)"></button>
+          <button for="slotNum" type="button" class="btn catch-btn" title="catch pok&eacute;mon! (confirm)" (click)="addSlot(slotNum.value)"></button>
         </div>
       </div> 
     </div>
