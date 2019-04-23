@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Token } from '../models/Token';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import { userInfo } from 'os';
 
 
 
@@ -49,6 +50,10 @@ export class AuthenticationService {
 
     this._http.post(`${Api_Url}/logout`, { headers: authHeader} );
     this._router.navigate(['/login']);
+  }
+
+  getme() {
+    return this._http.get(`${Api_Url}/trainers/me`, { headers: this.setHeader() });
   }
 
 
