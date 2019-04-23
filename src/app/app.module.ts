@@ -24,6 +24,7 @@ import { AlertService } from './services/AlertService';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TeamService } from './services/team.service';
 import { PokemonService } from './services/pokemon.service';
+import { HeaderComponent } from './header/header.component';
 
 
 
@@ -43,6 +44,7 @@ import { PokemonService } from './services/pokemon.service';
     EditTeamComponent,
     EditUserComponent,
     ViewUserTeamsComponent,
+    HeaderComponent,
     
   ],
   imports: [

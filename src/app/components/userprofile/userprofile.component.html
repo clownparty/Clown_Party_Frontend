@@ -2,20 +2,19 @@
 <div class="row">
   <div class="col-1"></div>
   <div class="col-6">
-    <!-- <h1>Username</h1>
-    <p>email <br> id</p> -->
+    <br>
     <h1>{{ user.name }}</h1>
     <p>{{ user.email }} <br> {{ user.id }} </p>
     <!-- <h3>About</h3>
     <p>bio goes here</p> -->
     <!-- <p>{{ user.bio }}</p> -->
     <br><br><br><br><br><br><br><br>
-    <div *ngIf="thisUser">
-      <button class="btn profilebtn" routerLink="/trainers/me/edit">Edit profile</button>
-    </div>
+    <button class="btn profilebtn" routerLink="/trainers/me/edit">Edit profile</button>
   </div> 
   <div class="col-4 profilecol2"> 
-    <div class="profilepic">{{user.fav_poke.image}}</div>
+    <div class="profilepic">
+      <img src="{{favePoke.pokemonimage}}">
+    </div>
     <h3>Teams</h3>
     <li *ngFor="let team of teams" class="team-list">
       {{ team.name }}
@@ -25,9 +24,7 @@
     <li class="team-list"> team 3</li>
     <br>
     <button class="btn profilebtn" routerLink="/team/view">View all teams</button>
-    <div *ngIf="thisUser">
-      <button class="btn profilebtn" routerLink="/team/new">Add team</button>
-    </div>
+    <button class="btn profilebtn" routerLink="/team/new">Add team</button>
   </div>
   <div class="col-1"></div>
 </div>
@@ -36,20 +33,18 @@
 <div class="row">
   <div class="col-1"></div>
   <div class="col-6">
-    <h3>Pokemon name</h3>
-    <h3>{{ user.fav_poke.name }}</h3>
-    <h5>Pokedex number</h5>
-    <h5>{{ user.fav_poke.id }}</h5>
+    <h3>{{ favePoke.name }}</h3>
+    <h5>{{ favePoke.id }}</h5>
     <!-- <h6>Type(s)</h6> -->
     <h6>Description:</h6>
-    <p>{{user.fav_poke.desc}}</p>
+    <p>{{favePoke.pokemondescription}}</p>
   </div>
   <div class="col-4 profilecol2"> 
-    <div class="profilepic favpokepic">{{user.fav_poke.image}}</div>
-    <br>
-    <div *ngIf="thisUser">
-      <button class="btn profilebtn changefavbtn" routerLink="/trainers/me/edit">Change Favorite</button>
+    <div class="profilepic favpokepic">
+      <img src="{{favePoke.pokemonimage}}">
     </div>
+    <br>
+    <button class="btn profilebtn changefavbtn" routerLink="/trainers/me/edit">Change Favorite</button>
   </div>
   <div class="col-1"></div>
 </div> 

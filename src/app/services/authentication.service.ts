@@ -3,7 +3,7 @@ import { User } from '../models/user.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Token } from '../models/Token';
 import { Router } from '@angular/router';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { userInfo } from 'os';
 
 
@@ -15,10 +15,15 @@ const Api_Url = 'https://pokemonteam-builder.herokuapp.com/api/v1/users'
 })
 export class AuthenticationService {
   userInfo: Token;
-  isLoggedIn = new Subject<boolean>();
-  user_id = new Subject<number>();
+  isLoggedIn = new BehaviorSubject<boolean>(false);
+  user_id = new BehaviorSubject<number>(undefined);
 
-  constructor(private _http: HttpClient, private _router: Router) { }
+  constructor(private _http: HttpClient, private _router: Router) {
+    console.log('Waddup') 
+    if (localStorage.getItem('id_token')) {
+      this.isLoggedIn.next(true);
+    }
+  }
 
   register(regUserData: User) {
     return this._http.post(`${Api_Url}/register`, regUserData);
@@ -29,7 +34,7 @@ export class AuthenticationService {
       email: loginInfo.email,
       password: loginInfo.password
     };
-    return this._http.post(`${Api_Url}/login`, data).subscribe( (token) => {
+    return this._http.post(`${Api_Url}/login`, data).subscribe( (token:any) => {
       localStorage.setItem('id_token', token.token);
       this.isLoggedIn.next(true);
       this._router.navigate(['/']);

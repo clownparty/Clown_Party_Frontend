@@ -15,15 +15,15 @@ export class PokemonService {
   }
 
   getAll() {
-    return this.http.get<Pokemon[]>(`${ApiUrl}/all`);
+    return this.http.get<Pokemon[]>(`${ApiUrl}/pokemon/all`);
   }
 
   getById(id: number): Observable<any> {
-    return this.http.get(`${ApiUrl}/<int:pokemonnumber>`);
+    return this.http.get(`${ApiUrl}/pokemon/number/${id}`);
   }
 
   getByName(name: string): Observable<any> {
-    return this.http.get(`${ApiUrl}/<str:name>`);
+    return this.http.get(`${ApiUrl}/pokemon/name/${name}`);
   }
 
   // getByType(type1: string, type2: string) {
