@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, config } from 'rxjs';
 import { User } from '../models/user.model';
 
@@ -29,13 +29,16 @@ export class UserService {
   }
 
   update(user: User) {
-
-    return this.http.put(`${ApiUrl}/trainers/me/edit`, user);
+    return this.http.put(`${ApiUrl}/trainers/me/edit`, user, { headers: this.setHeader() });
+    
   }
 
   delete(id: number) {
-    return this.http.delete(`${ApiUrl}/trainers/edit`);
-
+    return this.http.delete(`${ApiUrl}/trainers/edit`, { headers: this.setHeader() });
+  }
+  
+  private setHeader(): HttpHeaders {
+    return new HttpHeaders().set('api-token', `${localStorage.getItem('id_token')}`);
   }
 
 }
