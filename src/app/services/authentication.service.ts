@@ -24,12 +24,12 @@ export class AuthenticationService {
   }
 
   login(loginInfo) {
-    return this._http.post(`${Api_Url}/login`, JSON.stringify(loginInfo)).subscribe( (token: Token) => {
+    return this._http.post(`${Api_Url}/login`, JSON.stringify(loginInfo), {headers: this.setHeader()}).subscribe( (token: Token) => {
       // this.userInfo = token;
       localStorage.setItem('id_token', token.token_type);
       this.isLoggedIn.next(true);
       this.user_id.next();
-      this._router.navigate(['/']);
+      this._router.navigate(['/trainers/me']);
     });
   }
 
