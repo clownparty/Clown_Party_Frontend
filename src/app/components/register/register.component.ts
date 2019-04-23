@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms'
 import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
@@ -9,30 +8,37 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class RegistrationComponent implements OnInit {
 
-  private _registerForm: FormGroup;
+  private myForm = {
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    fav_poke: 0
+  }
+  private formError: string;
 
-  constructor(private _form: FormBuilder, private _authService: AuthenticationService) {
-    this.createForm();
+  constructor(private _authService: AuthenticationService) {
    }
 
    onSubmit() {
-     console.log(this._registerForm.value);
-     this._authService
-      .register(this._registerForm.value)
-      .subscribe( () => this._authService.login(this._registerForm.value));
+     this.formError = undefined;
+     if (this.myForm.password !== this.myForm.confirmPassword) {
+       this.formError = "Passwords do not match!";
+       return
+     } else if ( this.myForm.username && (this.myForm.username.length < 3 || this.myForm.email.length < 5) ) {
+       this.formError = "Please enter valid information";
+       return
+     } else if ( this.myForm.fav_poke < 1 ) {
+       this.formError = "Please enter a valid pokemon id";
+       return
+     } else {
+       this._authService
+        .register(this.myForm)
+        .subscribe( () => this._authService.login({ email: this.myForm.email, password: this.myForm.password }));
+     }
    }
 
   ngOnInit() {
   }
 
-  createForm() {
-    this._registerForm = this._form.group({
-      username: new FormControl,
-      email: new FormControl,
-      password: new FormControl,
-      confirmpassword: new FormControl,
-      fav_poke: new FormControl
-    });
-  }
 }
-  
