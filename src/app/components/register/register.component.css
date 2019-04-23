@@ -228,3 +228,16 @@ p.buttons{
 		transform: translateX(-20px);
 	}
 }  */
+
+.btn-primary {
+	background-color: var(--Accent) !important;
+	border-color: var(--Accent) !important;
+}
+
+.btn-primary:hover {
+	background-color: var(--Accent-Dark) !important;
+}
+
+a {
+	color: var(--Accent);
+}
