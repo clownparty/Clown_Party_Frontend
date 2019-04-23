@@ -5,7 +5,9 @@ import { Token } from '../models/Token';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 
-const Api_Url = 'https://pokemonteam-builder.herokuapp.com/api/v1'
+
+
+const Api_Url = 'https://pokemonteam-builder.herokuapp.com/api/v1/users'
 
 @Injectable({
   providedIn: 'root'
@@ -22,14 +24,11 @@ export class AuthenticationService {
   }
 
   login(loginInfo) {
-    const str = 
-      `grant-type=password&username=${encodeURI(loginInfo.email)}&password=${encodeURI(loginInfo.password)}`
-    
-    return this._http.post(`${Api_Url}/token`, str).subscribe( (token: any) => {
+    return this._http.post(`${Api_Url}/login`, JSON.stringify(loginInfo)).subscribe( (token: Token) => {
       // this.userInfo = token;
-      localStorage.setItem('id_token', token.token);
+      localStorage.setItem('id_token', token.token_type);
       this.isLoggedIn.next(true);
-      this.user_id.next(token.user_id);
+      this.user_id.next();
       this._router.navigate(['/']);
     });
   }
