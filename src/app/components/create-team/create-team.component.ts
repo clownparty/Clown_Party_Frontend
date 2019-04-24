@@ -9,7 +9,6 @@ import { AuthenticationService } from '../../services/authentication.service';
   styleUrls: ['./create-team.component.css']
 })
 export class CreateTeamComponent implements OnInit {
-  // logUser: number;
   teamName: string;
   searchQuery: string;
   selPoke: any;
@@ -30,17 +29,17 @@ export class CreateTeamComponent implements OnInit {
   constructor(private _teamService: TeamService, private pokeService:PokemonService, private authservice: AuthenticationService) { }
 
   onSubmit() {
-    this.sTeam.teamname = this.teamName;
-    this.sTeam.id = this.teamId;
+    if (!this.teamName) {
+      this.sTeam.teamname = "Unnamed Team";
+    } else {
+      this.sTeam.teamname = this.teamName;
+    }
     this._teamService
       .createTeam(this.sTeam)
       .subscribe()
   }
 
-  ngOnInit() {
-    // this.authservice.user_id.subscribe(status => this.logUser=status);
-    // this.sTeam.owner_id = this.logUser
-  }
+  ngOnInit() {}
 
   searchPoke() {
     this.pokeService.getByName(this.searchQuery).subscribe(val => this.selPoke=val);
@@ -48,6 +47,7 @@ export class CreateTeamComponent implements OnInit {
   
   addSlot() { 
     this.sTeam[`slot${this.slotSel}`] = this.selPoke;
+    console.log(this.slotSel);
   }
 
 }
