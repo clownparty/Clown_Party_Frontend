@@ -15,7 +15,7 @@ export class TeamService {
   }
 
   createTeam(teamData: Team) {
-    return this.http.post(`${ApiUrl}/team/new`, teamData);
+    return this.http.post(`${ApiUrl}/teams/team/new`, teamData);
   }
 
   getAll() {
