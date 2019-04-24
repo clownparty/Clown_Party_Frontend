@@ -7,7 +7,7 @@
 </div>
 <br><br>
 
-<input type="hidden" [(ngModel)]="logUser">
+<!-- <input type="hidden" [(ngModel)]="logUser"> -->
 <div class="row">
   <div class="col-4">
     <div class="pokeInfo">
@@ -74,7 +74,7 @@
   <br>
   <div class="btn-row">
     <br><br>
-    <button type="submit" class="btn my-btn" routerLink="/trainers/me" (click)="onSubmit()">Save and finish</button>
+    <button type="submit" class="btn my-btn" (click)="onSubmit()">Save and finish</button>
   </div>
 </div>
 

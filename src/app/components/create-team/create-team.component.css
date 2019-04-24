@@ -47,16 +47,15 @@ select {
 .pokepic {
     min-height: 50px;
     min-width: 50px;
-    width: 75%;
-    padding-top: 75%;
-    border-radius: 150px;
+    /* width: 75%; */
+    /* padding-top: 75%; */
+    /* border-radius: 150px; */
 }
 
 .slot {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 20px;
-    
+    /* margin-bottom: 20px; */
 }
 
 .slot h3 {

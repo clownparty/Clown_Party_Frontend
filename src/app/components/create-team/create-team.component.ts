@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../../services/team.service';
 import { PokemonService } from '../../services/pokemon.service';
 import { AuthenticationService } from '../../services/authentication.service';
+import { Router } from '@angular/router';
+import { Team } from 'src/app/models/team.model';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-create-team',
@@ -9,6 +12,8 @@ import { AuthenticationService } from '../../services/authentication.service';
   styleUrls: ['./create-team.component.css']
 })
 export class CreateTeamComponent implements OnInit {
+  user: User;
+  logUser: number;
   teamName: string;
   searchQuery: string;
   selPoke: any;
@@ -26,7 +31,7 @@ export class CreateTeamComponent implements OnInit {
     slot6: undefined,
   }
 
-  constructor(private _teamService: TeamService, private pokeService:PokemonService, private authservice: AuthenticationService) { }
+  constructor(private _teamService: TeamService, private pokeService:PokemonService, private authservice: AuthenticationService, private _router: Router) { }
 
   onSubmit() {
     if (!this.teamName) {
@@ -34,12 +39,28 @@ export class CreateTeamComponent implements OnInit {
     } else {
       this.sTeam.teamname = this.teamName;
     }
+    if (this.sTeam.slot1) {this.sTeam.slot1=this.sTeam.slot1.id} else {this.sTeam.slot1 = 37}
+    if (this.sTeam.slot2) {this.sTeam.slot2=this.sTeam.slot2.id} else {this.sTeam.slot2 = 37}
+    if (this.sTeam.slot3) {this.sTeam.slot3=this.sTeam.slot3.id} else {this.sTeam.slot3 = 37}
+    if (this.sTeam.slot4) {this.sTeam.slot4=this.sTeam.slot4.id} else {this.sTeam.slot4 = 37}
+    if (this.sTeam.slot5) {this.sTeam.slot5=this.sTeam.slot5.id} else {this.sTeam.slot5 = 37}
+    if (this.sTeam.slot6) {this.sTeam.slot6=this.sTeam.slot6.id} else {this.sTeam.slot6 = 37}
+    console.log(this.sTeam)
     this._teamService
       .createTeam(this.sTeam)
-      .subscribe()
+      .subscribe((team:Team) => { 
+        this.sTeam = team; 
+        this._router.navigate(['trainers/me']);
+        console.log(team);
+      });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.authservice.getme().subscribe((data:User) =>{
+      this.user = data;
+      this.sTeam.owner_id = this.user.id;
+    })
+  }
 
   searchPoke() {
     this.pokeService.getByName(this.searchQuery).subscribe(val => this.selPoke=val);
