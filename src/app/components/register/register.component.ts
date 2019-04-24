@@ -9,6 +9,7 @@ import { AuthenticationService } from '../../services/authentication.service';
 export class RegistrationComponent implements OnInit {
 
   private myForm = {
+    id: undefined,
     name: "",
     email: "",
     password: "",
