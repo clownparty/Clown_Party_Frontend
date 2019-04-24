@@ -25,7 +25,7 @@ export class RegistrationComponent implements OnInit {
      if (this.myForm.password !== this.myForm.confirmPassword) {
        this.formError = "Passwords do not match!";
        return
-     } else if ( this.myForm.username && (this.myForm.username.length < 3 || this.myForm.email.length < 5) ) {
+     } else if ( this.myForm.name && (this.myForm.name.length < 3 || this.myForm.email.length < 5) ) {
        this.formError = "Please enter valid information";
        return
      } else if ( this.myForm.fav_poke < 1 ) {
