@@ -82,7 +82,6 @@ select {
     border-radius: 150px;
     background-image: url('../../../../assets/pokeball.png');
     background-size: 48px;
-    margin-left: 20px;
 }
 
 .btn-row {

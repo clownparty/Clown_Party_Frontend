@@ -19,7 +19,7 @@ export class TeamService {
   }
 
   getAll() {
-    return this.http.get<Team[]>(`${ApiUrl}/team`);
+    return this.http.get<Team[]>(`${ApiUrl}/teams/team`);
   }
 
   getByName(teamname: string) {
