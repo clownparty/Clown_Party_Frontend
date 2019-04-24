@@ -16,11 +16,11 @@ export class TeamService {
   }
 
   createTeam(teamData: Team) {
-    return this.http.post(`${ApiUrl}/teams/team/new`, teamData);
+    return this.http.post(`${Api_Url}/teams/team/new`, teamData);
   }
 
   getAll() {
-    return this.http.get<Team[]>(`${ApiUrl}/teams/team`);
+    return this.http.get<Team[]>(`${Api_Url}/teams/team`);
   }
 
   getByName(teamname: string) {
