@@ -4,8 +4,10 @@
 <div class="naming">
   <label for="teamName">Please name your team: </label>
   <input name="teamName" [(ngModel)]="teamName" placeholder="Unnamed Team">
+  <br><br>
+  <small>Please be aware that any empty slots in your team will be filled with vulpix.</small>
 </div>
-<br><br>
+<br>
 
 <!-- <input type="hidden" [(ngModel)]="logUser"> -->
 <div class="row">
@@ -22,7 +24,7 @@
       <p *ngIf="selPoke">{{selPoke.pokemondescription}}</p>
       <input name="pokeSearch" [(ngModel)]="searchQuery" placeholder="search for pok&eacute;mon" id="pokesearchbar">
       <button type="button" for="pokeSearch" class="btn my-btn" (click)="searchPoke()">Search</button>
-      </div>
+    </div>
     <br>
     <div class="slots">
       <h3>Add to Team</h3>

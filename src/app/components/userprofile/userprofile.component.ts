@@ -26,11 +26,9 @@ export class UserprofileComponent implements OnInit {
   ngOnInit(): void {
     this.authservice.getme().subscribe((data:User) =>{
       this.user = data
-      // console.log(this.user)
       this.favNum = this.user.fav_poke;
       this.pokeService.getById(this.favNum).subscribe((val:Pokemon) => {
         this.favePoke=val;
-        // console.log(this.favePoke);
       });
     });
     // get teams and add to list
