@@ -9,22 +9,7 @@
 
 <div class="row">
   <div class="col-5">
-    <div class="pokeInfo">
-      <div class="pokeinfoTop">
-        <div class="pokepicLeft">{{selPoke.image}}</div>
-        <div>
-          <h3>Name</h3>
-          <h4>#</h4>
-          <h3>{{selPoke.name}}</h3>
-          <h4>{{selPoke.id}}</h4>
-        </div>
-      </div>
-      <h5>Description</h5>
-      <p>filler text gers grejfokn rgeiojgre rgeojjg qro 3powfk gerklfn qwrjfwaskn aefd wefas</p>
-      <p>{{pokemon.desc}}</p>
-      <input name="pokeSearch" [(ngModel)]="selPoke" placeholder="search for pok&eacute;mon" id="pokesearchbar">
-      <button type="button" for="pokeSearch" class="btn my-btn">Search</button>
-      </div>
+    <app-find-poke></app-find-poke>>
     <br>
     <div class="slots">
       <h3>Add to Team</h3>

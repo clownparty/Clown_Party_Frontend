@@ -3,29 +3,14 @@
 
 <div class="naming">
   <label for="teamName">Please name your team: </label>
-  <input name="teamName" [(ngModel)]="teamName" value="Unnamed Team">
+  <input name="teamName" [(ngModel)]="teamName" placeholder="Unnamed Team">
 </div>
 <br><br>
 
-<input type="hidden" [(ngModel)]="logUser">
+<!-- <input type="hidden" [(ngModel)]="logUser"> -->
 <div class="row">
   <div class="col-5">
-    <div class="pokeInfo">
-      <div class="pokeinfoTop">
-        <div class="pokepicLeft">{{selPoke.image}}</div>
-        <div>
-          <h3>Name</h3>
-          <h4>#</h4>
-          <h3>{{selPoke.name}}</h3>
-          <h4>{{selPoke.id}}</h4>
-        </div>
-      </div>
-      <h5>Description</h5>
-      <p>filler text gers grejfokn rgeiojgre rgeojjg qro 3powfk gerklfn qwrjfwaskn aefd wefas</p>
-      <p>{{selPoke.desc}}</p>
-      <input name="pokeSearch" [(ngModel)]="searchQuery" placeholder="search for pok&eacute;mon" id="pokesearchbar">
-      <button type="button" for="pokeSearch" class="btn my-btn" (click)="searchPoke()">Search</button>
-      </div>
+    <app-find-poke></app-find-poke>
     <br>
     <div class="slots">
       <h3>Add to Team</h3>
@@ -48,29 +33,29 @@
     <div class="col-6">
         <div class="slot">
           <h3 id="slot1h3">1 </h3>
-          <div class="pokepic" *ngIf="team.slot1">{{team.slot1.image}}</div>
+          <div class="pokepic" *ngIf="team.slot1">{{sTeam.slot1.image}}</div>
         </div>
         <div class="slot">
           <h3>3</h3>
-          <div class="pokepic" *ngIf="team.slot3">{{team.slot3.image}}</div>
+          <div class="pokepic" *ngIf="team.slot3">{{sTeam.slot3.image}}</div>
         </div>
         <div class="slot">
           <h3>5</h3>
-          <div class="pokepic" *ngIf="team.slot5">{{team.slot5.image}}</div>
+          <div class="pokepic" *ngIf="team.slot5">{{sTeam.slot5.image}}</div>
         </div>
     </div>
     <div class="col-6">
       <div class="slot">
         <h3>2</h3>
-        <div class="pokepic" *ngIf="team.slot2">{{team.slot2.image}}</div>
+        <div class="pokepic" *ngIf="team.slot2">{{sTeam.slot2.image}}</div>
       </div>
       <div class="slot">
         <h3>4</h3>
-        <div class="pokepic" *ngIf="team.slot4">{{team.slot4.image}}</div>
+        <div class="pokepic" *ngIf="team.slot4">{{sTeam.slot4.image}}</div>
       </div>
       <div class="slot">
         <h3>6</h3>
-        <div class="pokepic" *ngIf="team.slot6">{{team.slot6.image}}</div>
+        <div class="pokepic" *ngIf="team.slot6">{{sTeam.slot6.image}}</div>
       </div>
     </div>
   </div>

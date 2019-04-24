@@ -82,7 +82,7 @@ select {
     height: 50px;
     width: 50px;
     border-radius: 150px;
-    background-color: var(--Accent-Dark);
+    background-image: url('../../../../assets/pokeball.png');
     margin-left: 20px;
 }
 

@@ -7,12 +7,14 @@ import { TeamService } from '../../services/team.service';
   styleUrls: ['./view-all-teams.component.css']
 })
 export class ViewAllTeamsComponent implements OnInit {
-  teamList = [];
+  teamList : any;
 
   constructor(private teamService: TeamService) { }
 
   ngOnInit() {
-    this.teamService.getAll().subscribe(add => this.teamList.push(add));
+    this.teamService.getAll().subscribe((val:any) => {
+      this.teamList = val;
+    })
   }
 
 }
