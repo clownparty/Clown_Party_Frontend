@@ -1,3 +1,8 @@
+
+export const environment = {
+    production: true
+};
+
 export let Api_Url = "";
 
 switch (window.location.hostname) {
