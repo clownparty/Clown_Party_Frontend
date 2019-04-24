@@ -25,7 +25,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TeamService } from './services/team.service';
 import { PokemonService } from './services/pokemon.service';
 import { HeaderComponent } from './header/header.component';
-import { FindPokeComponent } from './components/find-poke/find-poke.component';
 
 
 
@@ -46,7 +45,6 @@ import { FindPokeComponent } from './components/find-poke/find-poke.component';
     EditUserComponent,
     ViewUserTeamsComponent,
     HeaderComponent,
-    FindPokeComponent,
     
   ],
   imports: [

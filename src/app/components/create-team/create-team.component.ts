@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../../services/team.service';
 import { PokemonService } from '../../services/pokemon.service';
 import { AuthenticationService } from '../../services/authentication.service';
@@ -18,6 +18,7 @@ export class CreateTeamComponent implements OnInit {
   selPoke: any;
   slotSel: number;
   teamId: number;
+  searchQuery: string;
   sTeam = {
     owner_id: undefined,
     teamname:undefined,
@@ -31,13 +32,6 @@ export class CreateTeamComponent implements OnInit {
   }
 
   constructor(private _teamService: TeamService, private pokeService:PokemonService, private authservice: AuthenticationService, private _router: Router) { }
-
-  ngOnInit() {}
-
-  
-  addSlot() { 
-    this.sTeam[`slot${this.slotSel}`] = this.selPoke;
-  }
 
   onSubmit() {
     if (!this.teamName) {
@@ -71,10 +65,9 @@ export class CreateTeamComponent implements OnInit {
   searchPoke() {
     this.pokeService.getByName(this.searchQuery).subscribe(val => this.selPoke=val);
   }
-  
+
   addSlot() { 
     this.sTeam[`slot${this.slotSel}`] = this.selPoke;
-    console.log(this.slotSel);
   }
 
 }
