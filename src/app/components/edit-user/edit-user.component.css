@@ -1,0 +1,39 @@
+h1 {
+    text-align: center;
+}
+
+.update-btn {
+    background-color: var(--Secondary);
+    margin: 3px;
+}
+
+.update-btn:hover {
+    background-color: var(--Secondary-Dark);
+}
+
+.del-btn {
+    background-color: var(--Tertiary);
+    margin: 3px;
+}
+
+.del-btn:hover {
+    background-color: var(--Tertiary-Dark);
+}
+
+.piccol {
+    height: 75px;
+    width: 75px;
+    border-radius: 10px;
+}
+
+/* .pic {
+    background-color: var(--Accent);
+} */
+
+#buttoncol {
+    text-align: center;
+}
+
+input {
+    max-width: 100%;
+}

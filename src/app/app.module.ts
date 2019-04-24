@@ -1,12 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { RegisterComponent } from './components/register/register.component';
+import { RegistrationComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
@@ -14,27 +12,50 @@ import { PokemonListComponent } from './components/pokemon-list/pokemon-list.com
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
 import { CreateTeamComponent } from './components/create-team/create-team.component';
 import { ViewTeamComponent } from './components/view-team/view-team.component';
+import { UserService } from './services/user.service';
+import { ViewAllUsersComponent } from './components/view-all-users/view-all-users.component';
+import { ViewAllTeamsComponent } from './components/view-all-teams/view-all-teams.component';
+import { EditTeamComponent } from './components/edit-team/edit-team.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { ViewUserTeamsComponent } from './components/view-user-teams/view-user-teams.component'
+import { AuthenticationService } from './services/authentication.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AlertService } from './services/AlertService';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TeamService } from './services/team.service';
+import { PokemonService } from './services/pokemon.service';
+import { HeaderComponent } from './header/header.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    FooterComponent,
-    SidebarComponent,
-    RegisterComponent,
+    RegistrationComponent,
     LoginComponent,
     LogoutComponent,
     HomepageComponent,
     PokemonListComponent,
     UserprofileComponent,
     CreateTeamComponent,
-    ViewTeamComponent
+    ViewTeamComponent,
+    ViewAllUsersComponent,
+    ViewAllTeamsComponent,
+    EditTeamComponent,
+    EditUserComponent,
+    ViewUserTeamsComponent,
+    HeaderComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UserService, AuthenticationService, AlertService, TeamService, PokemonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

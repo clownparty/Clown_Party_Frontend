@@ -1,0 +1,13 @@
+<div>
+  <h1>{{user.name}}'s Teams</h1>
+  <h1>Username's Teams</h1>
+</div>
+<ul>
+  <li *ngFor="let team of userTeamList">
+    {{team.teamname}}
+  </li>
+</ul>
+
+<div class="btn-line">
+  <button class="btn back-btn" (click)="goBack()">Back</button>
+</div>

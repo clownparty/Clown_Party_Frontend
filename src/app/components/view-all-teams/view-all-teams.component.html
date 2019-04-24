@@ -1,0 +1,8 @@
+<div>
+  <h1>Teams</h1>
+</div>
+<ul>
+  <li *ngFor="let team of teamList">
+    <a routerLink="/team/view/{{team.teamname}}">{{team.teamname}}</a>
+  </li>
+</ul>

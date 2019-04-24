@@ -1,3 +1,33 @@
-<p>
-  register works!
-</p>
+<div id="register" class="form">
+  <form (ngSubmit)="onSubmit()">
+    <h1> Start your journey </h1>
+    <p>
+      <label for="usernamesignup" class="uname" data-icon="">Username</label>
+      <input id="usernamesignup" name="username" type="text" placeholder="username" [(ngModel)]="myForm.name" />
+    </p>
+    <p>
+      <label for="emailsignup" class="youmail" data-icon="">Email</label>
+      <input id="emailsignup" name="email" required="required" type="email" placeholder="email" [(ngModel)]="myForm.email" />
+    </p>
+    <p>
+      <label for="passwordsignup" class="youpasswd" data-icon="">Password </label>
+      <input id="passwordsignup" name="password" required="required" type="password" placeholder="eg. X8df!90EO" [(ngModel)]="myForm.password" />
+    </p>
+    <p>
+      <label for="passwordsignup_confirm" class="youpasswd" data-icon="">Confirm Password</label>
+      <input id="passwordsignup_confirm" name="confirmpassword" required="required" type="password" placeholder="eg. X8df!90EO" [(ngModel)]="myForm.confirmPassword" />
+    </p>
+    <p>
+      <label for="favoritepoke" class="favpokemon" data-icon="">Favorite Pokemon</label>
+      <input id="favoritepoke" name="fav_poke" required="required" type="favoritepokemon" placeholder="enter favorite pokemon" [(ngModel)]="myForm.fav_poke" />
+    </p>
+    <p *ngIf="formError" style="color:red;">
+      {{ formError }}
+    </p>
+    <button type='submit' class="btn btn-primary btn-lg active">Begin Your Journey!</button>
+    <p class="changelinks">
+      Already have a save file?
+      <a routerLink="/login" class="to_register"> Click to Start Journey </a>
+    </p>
+  </form>
+</div>

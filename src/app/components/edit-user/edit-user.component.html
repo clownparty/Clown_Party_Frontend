@@ -1,0 +1,67 @@
+<br>
+<h1>Update Trainer Profile</h1>
+<br>
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-3">
+    <label for="name">Trainer Name: </label>
+    <br>
+    <br>
+    <!-- <label for="about">About: </label>
+    <br>
+    <br> -->
+    <br>
+    <label for="fave">Favorite Pokemon: </label>
+  </div>
+  <div class="col-3">
+    <input name="name" [(ngModel)]="user.name" value="user.name">
+    <br>
+    <br>
+    <br>
+    <!-- <input name="about" [value]="bio">
+    <br>
+    <br> -->
+    <input name="fave" [(ngModel)]="user.fav_poke" value="user.fav_poke">
+    <br>
+    <small id="small1">Input a pok&eacute;mon</small>
+    <!-- <small id="small2">Found!</small>
+    <small id="small3">No pok&eacute;mon found</small> -->
+  </div>
+  <div class="col-3">
+    <div class="piccol"></div>
+    <div class="piccol pic">
+      <img src="{{favePoke.pokemonimage}}">
+    </div>
+  </div>
+  <div class="col-1"></div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6" id="buttoncol">
+    <button (click)="onSubmit()" type="submit" class="btn update-btn">Update</button>
+    <button name="delete" (click)="delUser()" class="btn del-btn">Delete Profile</button>
+  </div>
+  <div class="col-3"></div>
+</div>
+
+<br><br><br><br><br><br><br><br><br>
+
+
+<!-- <label for="name">Trainer Name: </label>
+<input name="name">
+<br>
+<label for="about">About: </label>
+<input name="about">
+<br>
+<label for="fave">Favorite Pokemon: </label>
+<input name="fave">
+<br>
+<small id="small1">Input a pok&eacute;mon</small>
+<small id="small2">Found!</small>
+<small id="small3">No pok&eacute;mon found</small>
+<div class="pic"></div>
+<button class="btn update-btn" routerLink="/trainers/me">Update</button> -->
+

@@ -97,3 +97,12 @@ select {
 .my-btn:hover {
     background-color: var(--Secondary-Dark);
 }
+
+.del-btn {
+    background-color: var(--Tertiary);
+    margin: 3px;
+}
+
+.del-btn:hover {
+    background-color: var(--Tertiary-Dark)
+}

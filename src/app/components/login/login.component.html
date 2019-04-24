@@ -1,3 +1,26 @@
-<p>
-  login works!
-</p>
+<br>
+<div id="container_demo" >
+	<div id="wrapper">
+		<div id="login">
+			<form (ngSubmit)="onSubmit()"> 
+				<h1>Continue Journey?</h1> 
+				<p> 
+					<label for="username" class="username"> Your email </label>
+					<input id="username" name="username" required="required" type="text" placeholder="username" [(ngModel)]="username" />
+				</p>
+				<p> 
+					<label for="password" class="password"> Your password </label>
+					<input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" [(ngModel)]="password" /> 
+				</p>
+				<p class="buttons"> 
+					<button class="btn btn-primary btn-lg active" type="submit">Login</button>
+				  </p>
+			</form>
+			<p class="change_link">
+				Start a new journey? 
+				<a routerLink="/register" class="to_register">Start Journey</a>
+			</p>
+		</div>
+	</div>
+</div>
+<br>
