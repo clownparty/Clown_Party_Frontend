@@ -13,7 +13,7 @@ import { UserprofileComponent } from './components/userprofile/userprofile.compo
 import { CreateTeamComponent } from './components/create-team/create-team.component';
 import { ViewTeamComponent } from './components/view-team/view-team.component';
 import { UserService } from './services/user.service';
-import { ViewAllUsersComponent } from './components/view-all-users/view-all-users.component';
+// import { ViewAllUsersComponent } from './components/view-all-users/view-all-users.component';
 import { ViewAllTeamsComponent } from './components/view-all-teams/view-all-teams.component';
 // import { EditTeamComponent } from './components/edit-team/edit-team.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
@@ -39,7 +39,7 @@ import { HeaderComponent } from './header/header.component';
     UserprofileComponent,
     CreateTeamComponent,
     ViewTeamComponent,
-    ViewAllUsersComponent,
+    // ViewAllUsersComponent,
     ViewAllTeamsComponent,
     // EditTeamComponent,
     EditUserComponent,
