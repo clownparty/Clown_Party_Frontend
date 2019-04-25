@@ -26,6 +26,10 @@ export class TeamService {
     return this.http.get(`${Api_Url}/team/view/`);
   }
 
+  getById(id: number) {
+    return this.http.get(`${Api_Url}/team/view/<int:id>`);
+  }
+
   getTeams(): Observable<any>  {
     return this.http.get(`${Api_Url}/team/view`);
   }
