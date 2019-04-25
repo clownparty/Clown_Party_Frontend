@@ -1,7 +1,7 @@
 <br>
 <h1>Update Trainer Profile</h1>
 <br>
-<div class="row">
+<div *ngIf="user" class="row">
   <div class="col-2"></div>
   <div class="col-3">
     <label for="name">Trainer Name: </label>
@@ -27,8 +27,8 @@
     <!-- <small id="small2">Found!</small>
     <small id="small3">No pok&eacute;mon found</small> -->
   </div>
-  <div class="col-3">
-    <div class="piccol"></div>
+  <div *ngIf="favePoke" class="col-3">
+    <div class="piccol">{{favePoke.name}}</div>
     <div class="piccol pic">
       <img src="{{favePoke.pokemonimage}}">
     </div>
