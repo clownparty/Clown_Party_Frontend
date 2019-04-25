@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, config } from 'rxjs';
 import { Pokemon } from '../models/pokemon.model';
-
-const ApiUrl = "https://pokemonteam-builder.herokuapp.com/api/v1"
+import { Api_Url} from '../../environments/environment.prod';
 
 @Injectable()      //{ providedIn: 'root' }
 export class PokemonService {
@@ -15,15 +14,15 @@ export class PokemonService {
   }
 
   getAll() {
-    return this.http.get<Pokemon[]>(`${ApiUrl}/pokemon/all`);
+    return this.http.get<Pokemon[]>(`${Api_Url}/pokemon/all`);
   }
 
   getById(id: number): Observable<any> {
-    return this.http.get(`${ApiUrl}/pokemon/number/${id}`);
+    return this.http.get(`${Api_Url}/pokemon/number/${id}`);
   }
 
   getByName(name: string): Observable<any> {
-    return this.http.get(`${ApiUrl}/pokemon/name/${name}`);
+    return this.http.get(`${Api_Url}/pokemon/name/${name}`);
   }
 
   // getByType(type1: string, type2: string) {

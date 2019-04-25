@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon.model';
 import { Team } from 'src/app/models/team.model';
 import { TeamService } from 'src/app/services/team.service';
+import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
   selector: 'app-view-team',
@@ -10,9 +11,20 @@ import { TeamService } from 'src/app/services/team.service';
 })
 export class ViewTeamComponent implements OnInit {
   selectedPoke: Pokemon;
-  team: Team;
+  // team: Team;
+  sTeam = {
+    owner_id: undefined,
+    teamname:undefined,
+    id: undefined,
+    slot1: undefined,
+    slot2: undefined,
+    slot3: undefined,
+    slot4: undefined,
+    slot5: undefined,
+    slot6: undefined,
+  }
 
-  constructor(private teamService: TeamService) { }
+  constructor(private teamService: TeamService, private pokeService:PokemonService) { }
 
   ngOnInit() {
     this.getTeam();
@@ -23,7 +35,14 @@ export class ViewTeamComponent implements OnInit {
   }
 
   getTeam(): void {
-    this.teamService.getTeams().subscribe(teem => this.team=teem);
+    this.teamService.getTeams().subscribe(team => {this.sTeam=team;
+      this.sTeam.slot1=this.pokeService.getById(this.sTeam.slot1);
+      this.sTeam.slot2=this.pokeService.getById(this.sTeam.slot2);
+      this.sTeam.slot3=this.pokeService.getById(this.sTeam.slot3);
+      this.sTeam.slot4=this.pokeService.getById(this.sTeam.slot4);
+      this.sTeam.slot5=this.pokeService.getById(this.sTeam.slot5);
+      this.sTeam.slot6=this.pokeService.getById(this.sTeam.slot6);
+  })
   }
 
 }

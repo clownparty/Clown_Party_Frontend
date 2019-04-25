@@ -2,7 +2,8 @@
   <h1>Teams</h1>
 </div>
 <ul>
-  <li *ngFor="let team of teamList">
-{{team.teamname}}
-  </li>
-</ul>
+  <li *ngFor="let team of teamList"><a href='{{teamViewUrl}}'>
+  {{team.teamname}}
+  </a></li>
+
+<br><br><br>

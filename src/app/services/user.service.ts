@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, config } from 'rxjs';
 import { User } from '../models/user.model';
+import { Api_Url} from '../../environments/environment.prod';
 
-const ApiUrl = "https://pokemonteam-builder.herokuapp.com/api/v1/users"
+
 
 @Injectable()      //{ providedIn: 'root' }
 export class UserService {
@@ -16,25 +17,25 @@ export class UserService {
 
   getAll() {
 
-    return this.http.get<User[]>(`${ApiUrl}/trainers`);
+    return this.http.get<User[]>(`${Api_Url}/trainers`);
   }
 
   getById(id: number) {
-    return this.http.get(`${ApiUrl}/trainers/` + id);
+    return this.http.get(`${Api_Url}/trainers/` + id);
 
   }
 
   getUser(): Observable<any>  {
-    return this.http.get(`${ApiUrl}/trainers/me`);
+    return this.http.get(`${Api_Url}/trainers/me`);
   }
 
   update(user: User) {
-    return this.http.put(`${ApiUrl}/trainers/me/edit`, user, { headers: this.setHeader() });
+    return this.http.put(`${Api_Url}/users/trainers/me/edit`, user, { headers: this.setHeader() });
     
   }
 
   delete(id: number) {
-    return this.http.delete(`${ApiUrl}/trainers/edit`, { headers: this.setHeader() });
+    return this.http.delete(`${Api_Url}/trainers/edit`, { headers: this.setHeader() });
   }
   
   private setHeader(): HttpHeaders {
