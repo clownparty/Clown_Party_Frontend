@@ -34,9 +34,9 @@ export class UserService {
     
   }
 
-  delete(id: number) {
-    return this.http.delete(`${Api_Url}/trainers/edit`, { headers: this.setHeader() });
-  }
+  // delete(id: number) {
+  //   return this.http.delete(`${Api_Url}/trainers/edit`, { headers: this.setHeader() });
+  // }
   
   private setHeader(): HttpHeaders {
     return new HttpHeaders().set('api-token', `${localStorage.getItem('id_token')}`);
