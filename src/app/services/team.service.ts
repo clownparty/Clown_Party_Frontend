@@ -5,7 +5,6 @@ import { Team } from '../models/team.model';
 import { Api_Url} from '../../environments/environment.prod';
 
 
-
 @Injectable()      //{ providedIn: 'root' }
 export class TeamService {
 
