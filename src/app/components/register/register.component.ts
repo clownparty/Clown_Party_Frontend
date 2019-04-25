@@ -8,7 +8,7 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class RegistrationComponent implements OnInit {
 
-  private myForm = {
+  public myForm = {
     id: undefined,
     name: "",
     email: "",
@@ -16,9 +16,9 @@ export class RegistrationComponent implements OnInit {
     confirmPassword: "",
     fav_poke: 0
   }
-  private formError: string;
+  public formError: string;
 
-  constructor(private _authService: AuthenticationService) {
+  constructor(public _authService: AuthenticationService) {
    }
 
    onSubmit() {

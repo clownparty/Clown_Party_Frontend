@@ -9,11 +9,11 @@ import { PokemonListComponent } from './components/pokemon-list/pokemon-list.com
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
 import { CreateTeamComponent } from './components/create-team/create-team.component';
 import { ViewTeamComponent } from './components/view-team/view-team.component';
-import { ViewAllUsersComponent } from './components/view-all-users/view-all-users.component';
+// import { ViewAllUsersComponent } from './components/view-all-users/view-all-users.component';
 import { ViewAllTeamsComponent } from './components/view-all-teams/view-all-teams.component';
-import { EditTeamComponent } from './components/edit-team/edit-team.component';
+// import { EditTeamComponent } from './components/edit-team/edit-team.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
-import { ViewUserTeamsComponent } from './components/view-user-teams/view-user-teams.component';
+// import { ViewUserTeamsComponent } from './components/view-user-teams/view-user-teams.component';
 
 
 const routes: Routes = [
@@ -22,15 +22,15 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'pokemon', component: PokemonListComponent },
-  { path: 'trainers', component: ViewAllUsersComponent },
+  // { path: 'trainers', component: ViewAllUsersComponent },
   { path: 'trainers/:id', component: UserprofileComponent },
   { path: 'trainers/me', component: UserprofileComponent },
   { path: 'trainers/me/edit', component: EditUserComponent},
-  { path: 'team/view/:id', component: ViewTeamComponent },
-  { path: 'team/view', component: ViewUserTeamsComponent },
+  { path: 'team/view/:teamname', component: ViewTeamComponent },
+  // { path: 'team/view', component: ViewUserTeamsComponent },
   { path: 'team/new', component: CreateTeamComponent },
   { path: 'team', component: ViewAllTeamsComponent },
-  { path: 'team/edit', component: EditTeamComponent },
+  // { path: 'team/edit', component: EditTeamComponent },
 ];
 
 @NgModule({
