@@ -30,7 +30,7 @@ export class UserService {
   }
 
   update(user: User) {
-    return this.http.put(`${Api_Url}/trainers/me/edit`, user, { headers: this.setHeader() });
+    return this.http.put(`${Api_Url}/users/trainers/me/edit`, user, { headers: this.setHeader() });
     
   }
 
