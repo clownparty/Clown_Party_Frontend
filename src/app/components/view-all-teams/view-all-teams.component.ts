@@ -8,6 +8,7 @@ import { TeamService } from '../../services/team.service';
 })
 export class ViewAllTeamsComponent implements OnInit {
   teamList : any;
+  teamViewUrl = `{ApiUrl}/team/view/{team.id}`
 
   constructor(private teamService: TeamService) { }
 
