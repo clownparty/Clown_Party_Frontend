@@ -1,28 +1,30 @@
 <br>
 <h1>Team Name</h1>
+<h1>{{team.teamname}}</h1>
+<h4>{{team.id}}</h4>
 <br>
 <div class="row">
   <div class="col-6 pokepics">
     <div class="row">
       <div class="col-4">
-        <div name="slot1" class="pokepic" *ngIf="team.slot1" (click)="selPoke(slot1)">{{team.slot1.image}}</div>
+        <div name="slot1" class="pokepic" *ngIf="team.slot1" (click)="selPoke(slot1)"><img src="{{team.slot1.pokemonimage}}"></div>
       </div>
       <div class="col-4">
-        <div name="slot2" class="pokepic" *ngIf="team.slot2" (click)="selPoke(slot2)">{{team.slot2.image}}</div>
+        <div name="slot2" class="pokepic" *ngIf="team.slot2" (click)="selPoke(slot2)"><img src="{{team.slot2.pokemonimage}}"></div>
       </div>
       <div class="col-4">
-        <div name="slot3" class="pokepic" *ngIf="team.slot3" (click)="selPoke(slot3)">{{team.slot3.image}}</div>
+        <div name="slot3" class="pokepic" *ngIf="team.slot3" (click)="selPoke(slot3)"><img src="{{team.slot3.pokemonimage}}"></div>
       </div>
     </div>
     <div class="row">
       <div class="col-4">
-        <div name="slot4" class="pokepic" *ngIf="team.slot4"(click)="selPoke(slot4)">{{team.slot4.image}}</div>
+        <div name="slot4" class="pokepic" *ngIf="team.slot4"(click)="selPoke(slot4)"><img src="{{team.slot4.pokemonimage}}"></div>
       </div>
       <div class="col-4">
-        <div name="slot5" class="pokepic" *ngIf="team.slot5"(click)="selPoke(slot5)">{{team.slot5.image}}</div>
+        <div name="slot5" class="pokepic" *ngIf="team.slot5"(click)="selPoke(slot5)"><img src="{{team.slot5.pokemonimage}}"></div>
       </div>
       <div class="col-4">
-        <div name="slot6" class="pokepic" *ngIf="team.slot6"(click)="selPoke(slot6)">{{team.slot6.image}}</div>
+        <div name="slot6" class="pokepic" *ngIf="team.slot6"(click)="selPoke(slot6)"><img src="{{team.slot6.pokemonimage}}"></div>
       </div>
     </div>
     <br>
@@ -38,10 +40,10 @@
         <h4>{{selectedPoke.number}}</h4>
         <!-- <h5>Type2/ Type1</h5> -->
       </div>
-    </div>   
+    </div>  
     <br>
     <h6>Description:</h6>
-    <p>{{selectedPoke.desc}}</p>
+    <p>{{selectedPoke.pokemondescription}}</p>
   </div>
 </div>
 
