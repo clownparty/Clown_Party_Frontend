@@ -27,8 +27,8 @@
     <!-- <small id="small2">Found!</small>
     <small id="small3">No pok&eacute;mon found</small> -->
   </div>
-  <div class="col-3">
-    <div class="piccol"></div>
+  <div *ngIf="favePoke" class="col-3">
+    <div class="piccol">{{favePoke.name}}</div>
     <div class="piccol pic">
       <img src="{{favePoke.pokemonimage}}">
     </div>
